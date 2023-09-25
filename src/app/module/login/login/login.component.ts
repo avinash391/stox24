@@ -23,7 +23,7 @@ tab1:boolean=true;
 singnup:boolean=false;
 
   visible:boolean = true
-  submited:any;
+  submited: boolean = false;
   profileID: any;
   response: any;
   // formEl!: HTMLFormElement;
@@ -78,26 +78,25 @@ singnup:boolean=false;
   }
   submit(){
 
+    this.submited = true;
+
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     let obj={
       User: this.loginForm.value.userName,
       Password: this.loginForm.value.password,
       Key:''
     }
-    this.submited = true;
-
 
 
     let formData = new FormData();
     formData.append('email', `${this.loginForm.value.userName}`);
     formData.append('password', `${this.loginForm.value.password}`);
-    this.submited = true;
+    // this.submited = true;
 
 
-
-
-    if (this.loginForm.invalid) {
-      return;
-    }
     if( this.loginForm.value.rememberMe){
       localStorage.setItem('rememberMe', 'true');
     localStorage.setItem('loginID', this.loginForm.value.userName);

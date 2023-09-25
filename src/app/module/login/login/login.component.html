@@ -1,14 +1,14 @@
 <section class="height-vh100-none h-00vh100 bgImages blue-bg-img" style="overflow-x: hidden;">
-    
+
   <div class="container align-items-center d-flex " style="height: 100vh;">
       <div class="row ">
         <div class="col-md-10 m-auto">
           <div class="row card-box">
-            
+
             <div class="col-md-6 my-pad-lr-50">
               <div class="row mb-4">
                 <div class="col-md-12">
-                   <img class="form-logo" src="assets/images/abbott-logo.png">
+                   <img class="form-logo" src="../../../../assets/images/Stox24.png">
                 </div>
               </div>
               <div class="row">
@@ -27,16 +27,16 @@
                             <div *ngIf="submited && f.userName.errors" class="invalid-feedback">
 
                               <div *ngIf="f.userName.errors?.required">Email id/Client Code is required.</div>
-                                
+
                             </div>
                           </div>
-                        
+
                           <div *ngIf="submited && f.userName.errors" class="invalid-feedback">
 
                             <div *ngIf="f.userName.errors?.required">Email id/Client is required.</div>
-                              
+
                           </div>
-                           
+
                          </div>
                          <!-- <div class="col-md-12 ab-input-decor" *ngIf="visible">
                           <div class="form-floating mb-3">
@@ -46,27 +46,27 @@
                               <div *ngIf="f.password.errors?.required">Password is required.</div>
                          </div>
                           </div>
-                      
-                         
-                            
+
+
+
                          </div> -->
                          <div class="col-md-12 ab-input-decor">
                           <div class="form-floating mb-3">
                             <input type="{{ visible ? 'password' : 'text' }}"  formControlName="password"   ariaAutoComplete="off"   [ngClass]="{ 'is-invalid': submited && f.password.errors }" class="form-control ab-border0" placeholder=".">
-                           
+
                             <span (click)="onclick()" class="password-toggle-icon">
                               <i class="fa fa-eye" [ngClass]="{ 'fa-eye-slash': !visible }"></i>
                             </span>
                             <label>Password:</label>
-                           
+
                             <div *ngIf="submited && f.password.errors" class="invalid-feedback">
                               <div *ngIf="f.password.errors?.required">Password is required.</div>
                          </div>
-                        
+
                           </div>
-                      
-                         
-                            
+
+
+
                          </div>
                          <div class="col-md-12">
                           <div class="form-group form-check">
@@ -81,10 +81,10 @@
                          <!-- <div class="col-md-12 pt-2 text-center">
                           <p class="formtit-2 mb-0">- Or -</p>
                         </div> -->
-                        
+
                          <div class="col-md-12 pt-3 arg-d-flex">
                           <div class="d-flex justify-content-between">
-                            
+
                             <div>
                               <a class="f13" routerLink="/forget-password" style="color:#787878"><i class="fa fa-lock" aria-hidden="true"></i>  Forgot Password</a>
                             </div>
@@ -95,13 +95,13 @@
                         </div>
                       </div>
                    </form>
-                </div>  
+                </div>
                 </div>
               </div>
              </div><!-- end-col -->
              <div class="col-md-6 hide-after-992">
-              <div>
-                 <img class="img-fluid rounded-1" src="assets/images/login-image1.png">
+              <div class="login-sidelogo">
+                 <img class="img-fluid rounded-1" src="../../../../assets/images/demo.6efd30239c73b22bbf12dfc7a11c9996.png">
               </div>
            </div>
           </div>

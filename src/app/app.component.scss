@@ -10,10 +10,10 @@
 
 .dashboard-section1{
     position: absolute;
-    background: #F2F6FC;
+    // background: #F2F6FC;
     min-height: calc(100vh - 0px);
-    left: 60px;
-    width: calc(100% - 60px);
+    left: 214px;
+    width: calc(81% - 60px);
     transition: all 0.5s ease;
     z-index: -1;
     padding: 78px 24px 24px 10px;
@@ -49,5 +49,5 @@ left:0px;
 @media only screen and (max-width: 992px) {
     .dashboard-section1{
         padding: 78px 15px!important;
-    } 
+    }
   }

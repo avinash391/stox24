@@ -3,19 +3,41 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 60px;
-    background: #3151b6;
+    width: 185px;
+
     z-index: 100;
     transition: all 0.5s ease;
 
 }
+li.side-bar-direction.active {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  border-radius: 0px 10px 10px 0px;
 
+}
+.icon-link span {
+  color: white;
+}
+
+ul.nav-links {
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+}
 .sidebar.close {
-  width: 60px;
+  width: 185px;
+}
+ul.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  border-right: 5px solid black;
 }
 
 .sidebar .logo-details {
-  height: 60px;
+  height: 54px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -75,13 +97,23 @@
 }
 
 .sidebar .nav-links li:hover {
-  background: #ffffff;
+  background: #000000;
+  border-radius: 0px 10px 10px 0px;
 
+
+}
+.sidebar .nav-links li :hover span.link-name{
+  color: white !important;
+  opacity: 1 !important;
 }
 
 .sidebar .nav-links .active {
-  background: #ffffff;
+  background: #000000;
 
+}
+li.side-bar-direction.active a span {
+  color: #fff!important;
+  opacity: 1!important;
 }
 
 .sidebar .nav-links li .icon-link {
@@ -237,7 +269,7 @@
 }
 
 .sidebar.close .profile-details {
-  width: 78px;
+  width: 186px;
 }
 
 .sidebar .profile-details .profile-content {

@@ -10,7 +10,7 @@
     border-radius: 1rem!important;
 }
 .card-box{
-    background: #fff;
+    // background: #fff;
     padding: 15px 0px;
     border-radius: 1rem!important;
     box-shadow: 1px 3px 20px 0px rgb(0 0 0 / 22%);
@@ -24,6 +24,14 @@
     // border-left: 0px;
     // }
 }
+
+.login-sidelogo {
+  display: flex;
+  align-items: center;
+  margin-top: 66px;
+}
+
+
 .input-pl-30{
     padding-left: 30px;
 }
@@ -51,9 +59,9 @@
     min-height: 400px;
     label{
         font-size: 13px;
-       
+
     }
-    
+
     a{text-decoration: none; margin-top: 10px;}
 }
 
@@ -96,7 +104,7 @@
         }
     }
 
-   
+
     .formtit-1 {
         font-size: 20px;
         font-weight: 600;
@@ -137,9 +145,10 @@
     }
 
     .blue-bg-img{
-        background-image: url("../../../../assets/images/bg-3.png");
+        background-image: url("../../../../assets/images/noise.6ab9c4f0c2e1d40ae9a9.png");
         background-repeat: no-repeat;
         background-size: cover;
+        background-color: #efe7e1 !important;
     }
 
 
@@ -147,15 +156,15 @@
         .my-pad-lr-50{
             padding-left:20px;
             padding-right: 20px;
-        } 
+        }
         .card-box{
             margin:0px 8px;
         }
         .login-area {
             width: 100%;
-             padding-left: 1px; 
-            padding-right: 1px; 
-           
+             padding-left: 1px;
+            padding-right: 1px;
+
         }
         .hide-after-992{
             display: none;
@@ -171,6 +180,5 @@
         transform: translateY(-90%);
         cursor: pointer;
       }
-    
 
- 
+
