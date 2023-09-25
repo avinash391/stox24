@@ -1,0 +1,69 @@
+
+
+<div class="sidebar" [ngClass]="{'show': isSidebarVisible}">
+   <div class="logo-details">
+     <div class="logo"></div>
+   </div>
+   <!-- <ul class="nav-links navbar-main-ul" id="nav-links">
+     <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
+       <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
+         <a [routerLink]="[item.link]">
+           <i [class]="item.icon"></i>
+           <span class="link_name">{{item.link_name}}</span>
+         </a>
+       </div>
+       <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
+         <a>
+           <i [class]="item.icon"></i>
+           <span class="link_name">{{item.link_name}}</span>
+         </a>
+         <i class='fa fa-angle-down navbar-arrow-color'></i>
+       </div>
+       <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
+         <li><a class="link_name">{{item.link_name}}</a></li>
+         <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
+           <a [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
+         </li>
+       </ul>
+     </li>
+   </ul> -->
+
+   <div   class="sidebar close"  >
+     <div class="logo-details"><a><img class="nav-logo-set" src="../../../assets/StoxFooter(1).png"></a></div>
+     <ul   class="nav-links">
+        <li [routerLinkActive]="['active']" class="">
+           <div class="icon-link"><a routerLink="dashboard"><i class="bx bxs-dashboard"></i><span class="link-name">Dashboard</span></a></div>
+           <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul>
+        </li>
+        <li class="">
+           <div class="icon-link">
+              <a><i class="bx bxs-user-account"></i><span class="link-name">Account</span></a>
+           </div>
+           <ul class="sub-menu">
+              <a><span class="link-name">Account</span></a>
+           </ul>
+        </li>
+        <li class="">
+           <div class="icon-link">
+              <a href="#/null"> <i class="bx bx-dollar"></i>  <span class="link-name">Finance</span> </a>
+              <i class="bx bxs-chevron-down arrow"></i>
+           </div>
+           <ul class="sub-menu">
+              <a><span class="link-name">Finance</span></a>
+              <li><a>Deposit Funds</a></li>
+              <li><a>Withdraw Funds</a></li>
+              <li><a>Transfer Funds</a></li>
+              <li><a>Ledger Overview</a></li>
+           </ul>
+        </li>
+       <li [routerLinkActive]="['active']">
+           <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>
+           <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul>
+        </li>
+     </ul>
+  </div>
+
+
+
+
+</div>
