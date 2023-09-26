@@ -39,15 +39,11 @@ export class PanVarifyComponent {
   pdfUrlpath: any;
 
   uploadImgCont:boolean=false;
-<<<<<<< HEAD
 
 
   // private constructor
   
   constructor(private formBuilder: FormBuilder, 
-=======
-  constructor(private formBuilder: FormBuilder,
->>>>>>> 4f1139222cbd035ba6ac0c2219f7e0789bdc110b
               private sharedData:SharedDataService,
              private services: ApiDataService,
              private globalService: GlobalService,
