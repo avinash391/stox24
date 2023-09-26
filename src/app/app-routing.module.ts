@@ -83,7 +83,13 @@ const routes: Routes = [
     path: 'confirmation-page', loadChildren: () => import('./module/confirmation-page/confirmation-page.module').then(m => m.ConfirmationPageModule) 
     
   },
-
+  {
+    path: 'depositeDetails',
+    loadChildren: () =>
+      import('./module/deposite/details.module').then(
+        (m) => m.BankDetailModule
+      ),
+  },
 
    {
     path: '**', redirectTo: '/dashboard'

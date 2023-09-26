@@ -39,7 +39,7 @@ if(this.clVal11 !=0){
     this.sharedData.selectedclassValue.subscribe((value: any) => {
       this.clVal11=value;
       console.log("this.clVal11", this.clVal11)
-      console.log("value",value   )
+      console.log("value",value )
      if(value.level=="pancard"){
       this.clVal = value;
       this.addClass = true;

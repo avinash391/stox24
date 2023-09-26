@@ -1,0 +1,54 @@
+.current-deposite{
+    width: auto;
+    display: inline-flex;
+    background-color: #6ee7b7;
+    padding: 20px 30px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+.current-deposite strong{
+    width: 100%;
+    font-size: 28px;
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+.current-deposite  p{
+    width: 100%;
+} 
+.deposite-btn {
+    width: 100%;
+    text-align: right;
+}
+.deposite-btn a:nth-child(1){
+    margin-right: 10px;
+}
+.deposite .btn-primary , .modal-popup .modal-footer .btn-primary{
+    background-color: #6ee7b7;
+    border-color: #6ee7b7;
+}
+.deposite-table {
+    width: 100%;
+    padding-top: 40px;
+}
+.deposite-table table tr th{
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.modal-popup .modal-header ,.modal-popup .modal-footer{
+    border: none ;
+}
+.popuActive .modal{
+    display: block;
+}
+.ammount-feild input{
+    width: 100%;
+    padding: 0px 10px;
+    height: 39px;
+    border-radius: 5px;
+    border: 1px solid #a3a3a3;
+}
+.modal-body p span{
+    font-weight: 700;
+}

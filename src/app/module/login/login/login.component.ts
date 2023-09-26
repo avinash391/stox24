@@ -39,13 +39,11 @@ singnup:boolean=false;
   constructor(private services:ApiDataService, private serviceslogin:LoginService,  private toastrService: ToastrService,private globalService:GlobalService,private formBuilder: FormBuilder,  private router:Router,public shareService:SharedDataService) {
     this.shareService.selectedsignupValue.subscribe((res)=>{
       this.singnup=res
-          // console.log("this.singnup", this.singnup)
+          // console.log("this.singnup", this.singnup)x
         })
   }
 
   ngOnInit(): void {
-
-
 
       this.loginForm = this.formBuilder.group({
       userName: ['', [Validators.required, Validators.maxLength(50), Validators.min(2)]],

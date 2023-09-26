@@ -65,10 +65,8 @@ export class AdharVerifyComponent {
 
 
   ngOnInit(): void {
- 
+
     this.sharedData.toggleClassValue(1);
-
-
     this.adharStatus = this.activateRout.snapshot.queryParamMap.get('status');
 
     if (this.adharStatus == 'success') {
@@ -86,6 +84,7 @@ export class AdharVerifyComponent {
 //DIGILOCKERS API's 
 testData:any
 reqDigiUrl(){
+  console.log("this.domain" ,this.domain)
   let obj = {
     
       "task": "url",

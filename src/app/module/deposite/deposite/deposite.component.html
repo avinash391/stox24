@@ -1,0 +1,62 @@
+<section>
+    <div  class="row">
+        <div class="col-6">
+            <div class="current-deposite-block">
+                <div class="current-deposite">
+                    <strong>Current  Deposit</strong>
+                    <p>₹  <span>0</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="deposite-btn">
+                <div class="deposite">
+                    <a class="btn btn-primary" (click)="openDepositePopup()">Deposite Amount</a>
+                    <a class="btn btn-secondary">Refresh</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="deposite-table">
+        <div class="deposite-table-inner">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">T. DATE</th>
+                    <th scope="col">AMOUNT</th>
+                    <th scope="col">T. NO.</th>
+                    <th scope="col">PAYMENT TYPE</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="modal-popup popuActive" *ngIf="ActivePoup == true ? 'active' : ''">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Enter amount to deposit</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click) = 'closePopup()'>
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Please enter an amount of at <span>least₹100000</span></p>
+                  <div class="ammount-feild">
+                    <input type="number"  placeholder="Ammount" (onkeyPress) = "valueKeypress($event)"  formControlName="amount"/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary">Cancel</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Pay</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>

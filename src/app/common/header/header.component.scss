@@ -176,7 +176,9 @@ border-radius: 0px 0px 0px 8px;
 }
 
 .topbgcolor{
-    background: #ffffff;
+    // background: #ffffff;
+    background: transparent;
+    box-shadow: none;
 }
 ul.sub-menu {
   height: 110px;

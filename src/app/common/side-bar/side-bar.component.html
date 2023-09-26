@@ -1,6 +1,6 @@
 
 
-<div class="sidebar" [ngClass]="{'show': isSidebarVisible}">
+<div class="sidebar side-bar-menu" [ngClass]="{'show': isSidebarVisible}">
    <div class="logo-details">
      <div class="logo"></div>
    </div>
@@ -29,8 +29,8 @@
    </ul> -->
 
    <div   class="sidebar close"  >
-     <div class="logo-details"><a><img class="nav-logo-set" src="../../../assets/StoxFooter(1).png"></a></div>
-     <ul   class="nav-links">
+     <div class="logo-details"><a><img class="nav-logo-set" src="../../../../assets/images/Stox24.png"></a></div>
+     <ul   class="nav-links sidebar-nav-links">
         <li [routerLinkActive]="['active']" class="side-bar-direction">
            <div class="icon-link"><a routerLink="dashboard"><i class="bx bxs-dashboard"></i><span class="link-name">Dashboard</span></a></div>
            <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul>
@@ -45,16 +45,17 @@
         </li>
         <li class="side-bar-direction">
            <div class="icon-link">
-              <a href="#/null"> <i class="bx bx-dollar"></i>  <span class="link-name">Finance</span> </a>
+              <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>  
+                <span class="link-name">Deposite</span> </a>
               <i class="bx bxs-chevron-down arrow"></i>
            </div>
-           <ul class="sub-menu">
+           <!-- <ul class="sub-menu">
               <a><span class="link-name">Finance</span></a>
               <li><a>Deposit Funds</a></li>
               <li><a>Withdraw Funds</a></li>
               <li><a>Transfer Funds</a></li>
               <li><a>Ledger Overview</a></li>
-           </ul>
+           </ul> -->
         </li>
        <li [routerLinkActive]="['active']" class="side-bar-direction">
            <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>

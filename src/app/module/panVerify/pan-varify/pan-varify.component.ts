@@ -14,8 +14,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./pan-varify.component.scss']
 })
 export class PanVarifyComponent {
-  
-  signUpForm: any = FormGroup;
+  // signUpForm: any = FormGroup;
   veryFy: any = FormGroup;
   veryFyPenNo: any = FormGroup;
   tab1: any = false;
@@ -40,6 +39,10 @@ export class PanVarifyComponent {
   pdfUrlpath: any;
  
   uploadImgCont:boolean=false;
+
+
+  // private constructor
+  
   constructor(private formBuilder: FormBuilder, 
               private sharedData:SharedDataService,
              private services: ApiDataService, 
@@ -51,8 +54,8 @@ export class PanVarifyComponent {
 
 
   get f2() { return this.veryFyPenNo.controls; }
-  
 
+  // ngOnInit for verify pan  
   ngOnInit(): void {
     this.veryFyPenNo = this.formBuilder.group({
       penNo: ['', [Validators.required]],
@@ -69,7 +72,7 @@ export class PanVarifyComponent {
  
   onFileSelected12(event: any): void{
     this.fileError = '';
-    console.log(event)
+    console.log("eventeventeventevent" ,event)
     const file: File = event.target.files[0];
     this.sharedData.loader(true);
     console.log(event.target.files)
@@ -118,6 +121,7 @@ export class PanVarifyComponent {
 
   }
 
+// pan upload 
 
   onFileSelected(event: any): void {
     this.removePDF(); 
@@ -134,33 +138,25 @@ export class PanVarifyComponent {
     }
   }
   
- 
+//  upload files kyc
   uploadFile(): void {
-   
-  
     if (this.selectedFile) {
       const formData: FormData = new FormData();
       formData.append('file', this.selectedFile, this.selectedFile.name);
       formData.append('ttl', 'infinity');
       console.log(this.selectedFile)
-  
       this.http.post('https://persist.signzy.tech/api/files/upload', formData).subscribe(
         (response:any) => {
-      
-
           if(response.file.filetype=="application/pdf"){
             this.pdfUrlpath= response.file.directURL;
-            this.panIdentity( this.pdfUrlpath);
+            // console.log('responseresponseresponseresponse' ,response.file.directURL)
+            this.panIdentity(this.pdfUrlpath);
             this.PANdoc=this.pdfUrlpath;
-            // this.uploadPANdb(this.pdfUrlpath,1);
             this.uploadImgCont=true;
-           
-            localStorage.setItem('PANimg', this.pdfUrlpath);
-            
-           
 
+            localStorage.setItem('PANimg', this.pdfUrlpath);
           }else{
-            this.PANimg=response.file.directURL;
+            this.PANimg = response.file.directURL;
             this.panIdentity(this.PANimg);
             this.PANdoc=this.PANimg
             // this.uploadPANdb(this.PANimg,1);
@@ -168,8 +164,6 @@ export class PanVarifyComponent {
             localStorage.setItem('PANimg', this.PANimg);
            
           }
-
-
         },
         (error) => {
           this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
@@ -181,7 +175,6 @@ export class PanVarifyComponent {
 
   removePDF(){
     this.uploadImgCont=false;
-    
     this.PANimg='';
   }
 
@@ -193,7 +186,7 @@ export class PanVarifyComponent {
 
 
 
-
+// panidentify function
   panIdentity(val:any) {
     let obj =  {
       "type": "individualPan",
@@ -205,6 +198,7 @@ export class PanVarifyComponent {
     }
     this.sharedData.loader(true);
     this.services.getPANidentity(obj).subscribe((data: any) => {
+      console.log('datadatadata' ,data)
       if (data.id) {
         console.log("data.iddata.id", data.id),
           this.itemId = data.id
@@ -218,13 +212,12 @@ export class PanVarifyComponent {
        
       }
     },(error)=>{
-    
       this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
       this.sharedData.loader(false)
     });
    
   }
-
+//extractPANcard
 extractPANcard(){
   let obj = 
   {
@@ -236,7 +229,7 @@ extractPANcard(){
   }
     this.sharedData.loader(true);
     this.services.ExtractPANCARD(obj).subscribe((res:any)=>{
-      console.log(res)
+      console.log("resresresresres" ,res)
       this.extPAN={
         itemId: res.itemId,
         accessToken: res.accessToken
@@ -250,7 +243,6 @@ extractPANcard(){
       this.showInputTags=true;
       this.PANCARDVerification();
       this.veryFyPenNo.setValue({
-       
         penNo: this.panNumber,
         pandob: this.name,
         fname: this.fatherName,
@@ -265,6 +257,7 @@ extractPANcard(){
 }
 PANdoc= ""
 
+// panvarification
 PANCARDVerification(){
   let obj = 
   {
@@ -281,12 +274,12 @@ PANCARDVerification(){
   }
   this.sharedData.loader(true);
   this.services.VerifyPANCard(obj).subscribe((data:any)=>
-
   {
+    console.log("datadatadatadata",data)
     if(data.response.result.panStatus=="VALID"){
           this.sharedData.loader(false);
           // let val = 2;
-          this.uploadPANdb(this.PANdoc,1);
+          this.uploadPANdb(this.PANdoc, 1);
           this.isNextButtonDisabled=false;
          
         
@@ -328,17 +321,12 @@ uploadPANdb(val:any,val1:any){
     this.sharedData.loader(false)
   })
 }
-statusCheck: any;
-
-
-  
+statusCheck: any;  
   navigate(){
     this.sharedData.toggleClassValue(1);
     this.router.navigate(['/onboading-kyc/adhar-verify']);
-    
 
   }
-
   onInput(event: any): void {
     const input = event.target.value;
     const maxLength = 12;

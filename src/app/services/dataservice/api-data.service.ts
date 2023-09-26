@@ -99,6 +99,16 @@ getDigiFiles(obj:any){
 }
 
 
+
+// 
+
+
+
+getDeposite(){
+  return this.http.get('https://stox24.com/admin/api/create-deposit-request')
+}
+
+
 getInvestment(){
   return this.http.get('https://stox24.com/admin/api/investment-summary')
 }

@@ -121,9 +121,7 @@ this.start1(3);
   }
 
 
-  ngOnDestroy(): void {
-
-  }
+  ngOnDestroy(): void {}
 
 
 
