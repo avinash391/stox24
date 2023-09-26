@@ -13,18 +13,15 @@ import swal from 'sweetalert2';
 })
 export class DepositeDetails {
   ActivePoup: boolean = false
-
-
-
   openDepositePopup(){
      this.ActivePoup = true
   }
   closePopup(){
     this.ActivePoup = false
   }
-  // valueKeypress(event : any){
-  //   console.log('eventeventeventeventevent' ,event)
+  valueKeychange(event : any){
+    console.log('eventeventeventeventevent' ,event)
 
-  // }
+  }
 }
 
