@@ -24,11 +24,14 @@ notificationBoolean:boolean=false;
   last: any;
   profileForm: any;
   receivedData: any;
-  constructor( private router:Router, private sharedData:SharedDataService, private services:ApiDataService, private service:GlobalService) { 
+  constructor( private router:Router,
+    private sharedData:SharedDataService,
+    private services:ApiDataService,
+    private service:GlobalService) {
     console.log("this.service.isLoggedIn()", this.service.isLoggedIn())
     if((this.service.isLoggedIn())){
       // console.log("erwerewrtwetretretretretretretretretretre")
-      
+
       this.getDetails();
     }else{
       this.sharedData.selectedprofileValue.subscribe((data:any) => {
@@ -39,7 +42,7 @@ notificationBoolean:boolean=false;
       this.last=data.Last;
       });
     }
-  
+
   }
 
 
@@ -56,20 +59,16 @@ notificationBoolean:boolean=false;
 
 
   ngOnInit(): void {
-    // console.log("this.service.isLoggedIn()", this.service.isLoggedIn())
-    // if((this.service.isLoggedIn())){
-    //   // console.log("erwerewrtwetretretretretretretretretretre")
-      
-    //   this.getDetails();
-    // }else{
-    //   this.sharedData.selectedprofileValue.subscribe((data:any) => {
-    //   console.log("datadatadatadatadat",data)
-    //   this.receivedData = data;
-    //   this.email=data.Email;
-    //   this.first=data.First;
-    //   this.last=data.Last;
-    //   });
-    // }
+    // Uncomment this code to fetch user details even if the user is not logged in
+    this.sharedData.selectedprofileValue.subscribe((data: any) => {
+      this.receivedData = data;
+      this.email = data.Email;
+      this.first = data.First;
+      this.last = data.Last;
+    });
+
+    // Update data for testing purposes
+    this.updateData();
   }
   getDetails(){
     // console.log("sessionStorage.setItem('ProfileID',data.Login),", sessionStorage.getItem('ProfileID'),)
@@ -84,16 +83,16 @@ notificationBoolean:boolean=false;
       this.email=data.Email;
       this.first=data.First;
       this.last=data.Last;
-   
+
     })
   }
- 
+
 
 
 
   updateData() {
     this.addClass=!this.addClass;
-   
+
   }
   logout(){
 // this.cookis.deleteAll();
@@ -112,7 +111,7 @@ this.router.navigate(['/login']);
 
 
   toggleSidebar(): void {
- 
+
     this.sharedData.toggleSidebar();
     console.log("working")
   }
@@ -123,11 +122,11 @@ this.router.navigate(['/login']);
   closeDropdown() {
     this.menuBoolean = false;
   }
-  
+
   stopPropagation(event: Event) {
     event.stopPropagation();
   }
-  
+
   @HostListener('document:click', ['$event'])
   handleClick(event: Event) {
     const targetElement = event.target as HTMLElement;

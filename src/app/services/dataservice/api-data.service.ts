@@ -26,6 +26,12 @@ USER_LOGIN(obj:any){
   return this.http.post(this.domainSecond +'login', obj);
 }
 
+UpdateProfile(obj: any, headers: HttpHeaders) {
+  const options = { headers };
+  return this.http.post(this.domainSecond + 'create-profile', obj, options);
+}
+
+
 
 
 GET_USER_STAGE(obj:any){
