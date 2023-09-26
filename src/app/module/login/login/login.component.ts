@@ -83,7 +83,7 @@ singnup:boolean=false;
     if (this.loginForm.invalid) {
       return;
     }
-
+    const isFirstTimeLogin = localStorage.getItem('isFirstTimeLogin') !== 'false';
     let obj={
       User: this.loginForm.value.userName,
       Password: this.loginForm.value.password,
@@ -110,16 +110,29 @@ singnup:boolean=false;
 
 
 
-    // this.loginForm.reset();
+    this.loginForm.reset();
 
 
   // stocx
-this.services.USER_LOGIN(formData).subscribe(data => {
-  console.log(data,"login from my own service");
-  // this.shareService.loader(true);
-  console.log(data);
+  this.services.USER_LOGIN(formData).subscribe((data: any) => {
+    console.log(data, "login from my own service");
+    this.shareService.loader(true);
 
-});
+    // Check if data.authorization exists and has a token property
+    if (data && data.authorization && data.authorization.token) {
+      const token = data.authorization.token;
+      localStorage.setItem('token', token);
+    }
+
+    // Optionally, you can check if the token was successfully saved and then navigate.
+    if (localStorage.getItem('token')) {
+      console.log(localStorage.getItem('token'),"this is token")
+      this.router.navigate(['/onboading-kyc']);
+    }
+
+    this.shareService.loader(false);
+  });
+
 
     this.services.LOGIN_USER(obj).subscribe((data:any) =>
 
@@ -132,11 +145,11 @@ this.services.USER_LOGIN(formData).subscribe(data => {
         this.response=data,
         this.profileID=data.Login,
          localStorage.setItem('token',(JSON.stringify(data))),
-        // sessionStorage.setItem('ProfileID',data.Login),
+        sessionStorage.setItem('ProfileID',data.Login),
         localStorage.setItem('ProfileID',data.Login),
         this.getUserStage(),
-        this.getUserInfo()
-        // this.router.navigate(['/onboading-kyc'])
+        this.getUserInfo(),
+        this.router.navigate(['/onboading-kyc'])
 
     )
 

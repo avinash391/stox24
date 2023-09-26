@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
    url:"https://api.abbottwealth.in/Traderdesk_API_abbottwealth/",
-  redirectUrl:"https://client.abbottwealth.in/#/"
+  redirectUrl:"http://localhost:4200/#/"
   // url:"https://api.stocks4you.in/Traderdesk_API_stocks4you/",
   // redirectUrl:"https://crm.stocks4you.in/#/"
 };
