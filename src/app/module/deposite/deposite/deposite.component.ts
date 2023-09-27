@@ -14,9 +14,9 @@ export class DepositeDetails {
       amount: ['', [Validators.required, Validators.min(100000)]]
     });
   }
-  closePopup(){
-    this.ActivePoup = false
-  }
+  // closePopup(){
+  //   this.ActivePoup = false
+  // }
  
 
   ngOnInit(): void {
