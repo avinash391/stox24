@@ -19,9 +19,6 @@ export class DepositeDetails {
   closePopup(){
     this.ActivePoup = false
   }
-  valueKeychange(event : any){
-    console.log('eventeventeventeventevent' ,event)
-
-  }
+ 
 }
 
