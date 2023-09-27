@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
 import { GlobalService } from 'src/app/services/global.service';
 import { LoginService } from 'src/app/services/login.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SharedDataService } from 'src/app/services/sharedData/shared-data.service';
 import { Options } from "@angular-slider/ngx-slider";
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
@@ -70,7 +70,7 @@ export class PersonalDetailComponent {
       if(ev.target.checked){
       this.modalRef = this.modalService.show(template);
     }
-    
+
   }
   closeModal(){
     this.modalRef.hide();
@@ -79,9 +79,9 @@ export class PersonalDetailComponent {
     })
   }
   ngOnInit(): void {
-   
+
     this.myForm = this.formBuilder.group({
-      gender: ['', Validators.required], 
+      gender: ['', Validators.required],
       maritalstatus: ['', Validators.required],
       firstName: ['', [Validators.required,Validators.pattern('^[a-zA-Z\-\']+')]],
       // middleName: ['', Validators.required],
@@ -90,14 +90,14 @@ export class PersonalDetailComponent {
       occupation: ['', Validators.required],
       annualIncome: this.annualIncomeControl,
       yearsOfExperience: this.yearsOfExperienceControl,
-      // annualIncome: ['', Validators.required], 
+      // annualIncome: ['', Validators.required],
       // yearsOfExperience: ['', Validators.required],
-      // addNomination: [''], 
+      // addNomination: [''],
       portfolio:['', Validators.required],
-      checkPolicy1: [false, Validators.requiredTrue], 
-      checkPolicy2: [false, Validators.requiredTrue], 
-      
-      
+      checkPolicy1: [false, Validators.requiredTrue],
+      checkPolicy2: [false, Validators.requiredTrue],
+
+
     });
     this.myForm.valueChanges.subscribe((value:any) => {
       console.log("this.myForm.valueChanges", value)
@@ -110,14 +110,14 @@ export class PersonalDetailComponent {
       dob: ['', Validators.required],
       pan: ['',Validators.required],
     });
-  
 
-  
-   
-  
+
+
+
+
 
     this.sharedData.toggleClassValue(2);
-    
+
   }
   onFieldBlur(fieldName: string) {
     const field = this.myForm.get(fieldName);
@@ -131,7 +131,7 @@ export class PersonalDetailComponent {
       const newModalObject = Object.assign({}, this.modalValues, this.modalForm.value);
       this.modalValues = newModalObject;
       console.log("this.modalValues", this.modalValues);
-    
+
       this.modalService.hide();
   }
 }
@@ -189,6 +189,42 @@ keyPressAlphaNumeric(event:any) {
     NomineeDOB: modData.dob
    }
    this.sharedData.loader(true);
+// NOW THIS MY OWN API IS
+
+
+let obj2 = {
+  "personal_details": `{
+    "GenderID": "${formData.gender}",
+    "MartialID": "${formData.maritalstatus}",
+    "EducationID": "${formData.eduQ}",
+    "OccupationID": "${formData.occupation}",
+    "AnnualID": "${formData.annualIncome}",
+    "ExpID": "${formData.yearsOfExperience}",
+    "Worth": "${formData.portfolio}",
+    "NominationName": "${modData.name}",
+    "NominationEmail": "",
+    "NominationPan": "${modData.pan}",
+    "NominationAdhar": "",
+    "NomineeRelationId": "${modData.relationship}",
+    "NomineeDOB": "${modData.dob}"
+  }`
+};
+
+
+   const token = localStorage.getItem('token');
+
+   // Create HttpHeaders with the token
+   const headers = new HttpHeaders({
+     'Authorization': `Bearer ${token}`,
+     'Content-Type': 'application/json', // Adjust content type as needed
+   });
+   this.services.UpdateProfile(obj2, headers).subscribe((response: any) => {
+console.log(response,"response data ");      });
+
+
+// THIS IS FOR MY OWN STOX
+
+
    this.services.ADD_SIGNUP_PERSONAL(obj).subscribe((data:any)=>{
     console.log("Personal Details",data)
     if(data.Result==true){
@@ -201,12 +237,12 @@ keyPressAlphaNumeric(event:any) {
       this.sharedData.loader(false);
     }
    })
-    
-    
+
+
   }
-  
+
   navigate(){
-  
+
       this.router.navigate(['/onboading-kyc/bank-detail']);
       let obj={
         level:"personaldet",
@@ -219,14 +255,14 @@ keyPressAlphaNumeric(event:any) {
 
 
   valueCheck(event: any) {
- 
+
     this.myForm.value.checkPolicy1=event.target.checked;
     // console.log("this.myForm.value.checkPolicy1",this.myForm.value.checkPolicy1)
 
 
   }
   valueCheck1(event: any) {
- 
+
     this.myForm.value.checkPolicy2=event.target.checked;
     // console.log("this.myForm.value.checkPolicy2",this.myForm.value.checkPolicy2)
 
@@ -245,7 +281,7 @@ this.myForm.value.gender=ev.target.value
   // maritalCheck(ev:any){
   //   this.myForm.value.maritalstatus=ev.target.value
   // }
-  
+
 
 getAddressDetails(){
   let params = {
