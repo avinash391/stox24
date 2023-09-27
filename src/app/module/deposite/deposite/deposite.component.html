@@ -4,7 +4,7 @@
             <div class="current-deposite-block">
                 <div class="current-deposite">
                     <strong>Current  Deposit</strong>
-                    <p>₹  <span>0</span></p>
+                    <p>₹  <span>{{totalAmount}}</span></p>
                 </div>
             </div>
         </div>
@@ -27,10 +27,16 @@
                     <th scope="col">T. NO.</th>
                     <th scope="col">PAYMENT TYPE</th>
                     <th scope="col">STATUS</th>
-                    <th scope="col">ACTIONS</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr *ngFor="let item of investedMoney">
+                    <td>{{item.transaction_date}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.transaction_date}}</td>
+                    <td>{{item.payment_type}}</td>
+                    <td>{{item.status}}</td>
+                  </tr>
                 </tbody>
               </table>
         </div>
@@ -54,7 +60,7 @@
                 </div>
                 <div class="modal-footer">
 
-                  <button type="button" class="btn btn-secondary" (click)="onCancelButtonClick()">Cancel</button>
+                  <!-- <button type="button" class="btn btn-secondary" (click)="onCancelButtonClick()">Cancel</button> -->
                   <button type="button" class="btn btn-primary" [disabled]="!paymentForm.valid" (click)="onPayButtonClick()">Pay</button>
                 </div>
               </form>

@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,13 +17,15 @@ export class DashboardComponent implements OnInit {
   investmentData: any;
   investmentLooser: any = undefined;
   investmentgetainers:any = undefined;
+  investedMoney : any = undefined;
 
   constructor(private services: ApiDataService) { }
 
   ngOnInit(): void {
     this.getInvestment();
-    this.getTopLoosers()
-    this.getTopgainersApi()
+    this.getTopLoosers();
+    this.getTopgainersApi();
+    this.dashboardSummarydata()
   }
 
   getInvestment() {
@@ -42,6 +45,17 @@ export class DashboardComponent implements OnInit {
       this.investmentgetainers = data;
       console.log(this.investmentgetainers, "this is gainer data I'm getting");
     });
+  }
+  dashboardSummarydata(){
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+    this.services.dashboardSummary(headers).subscribe((data:any) => {
+      this.investedMoney = data.data;
+      console.log('this.dashboardData ' ,this.investedMoney)
+    })
   }
 
 }

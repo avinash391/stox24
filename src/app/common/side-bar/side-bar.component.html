@@ -33,17 +33,17 @@
      <ul   class="nav-links sidebar-nav-links">
         <li [routerLinkActive]="['active']" class="side-bar-direction">
            <div class="icon-link"><a routerLink="dashboard"><i class="bx bxs-dashboard"></i><span class="link-name">Dashboard</span></a></div>
-           <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul>
+           <!-- <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul> -->
         </li>
-        <li class="side-bar-direction">
+        <li class="side-bar-direction" [routerLinkActive]="['active']">
            <div class="icon-link">
               <a><i class="bx bxs-user-account"></i><span class="link-name">Account</span></a>
            </div>
-           <ul class="sub-menu">
+           <!-- <ul class="sub-menu">
               <a><span class="link-name">Account</span></a>
-           </ul>
+           </ul> -->
         </li>
-        <li class="side-bar-direction">
+        <li class="side-bar-direction" [routerLinkActive]="['active']">
            <div class="icon-link">
               <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>  
                 <span class="link-name">Deposite</span> </a>
@@ -59,7 +59,7 @@
         </li>
        <li [routerLinkActive]="['active']" class="side-bar-direction">
            <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>
-           <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul>
+           <!-- <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul> -->
         </li>
      </ul>
   </div>

@@ -11,6 +11,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PaymentDeposite {
   Ammount: any;
   informationUpdateForm: any = FormGroup;
+  selectedFile: any;
+  pdfUrl: any;
+  pdfUrlpath: any;
   get f() {
     return this.informationUpdateForm.controls;
   }
@@ -28,6 +31,28 @@ export class PaymentDeposite {
       screenshot: ['', [Validators.required]],
     });
   }
+
+
+
+  // onFileSelected(event: any): void {
+  //   this.removePDF();
+  //   this.selectedFile = event.target.files[0];
+  //   if (this.selectedFile) {
+  //     const reader = new FileReader();
+  //     reader.onload = (e: any) => {
+  //       this.pdfUrl = e.target.result;
+  //       console.log('pdf url' ,this.pdfUrl)
+  //     };
+  //     reader.readAsDataURL(this.selectedFile);
+  //   } else {
+  //     this.pdfUrl = null;
+  //   }
+  // }
+  // removePDF(){
+  //   // this.uploadImgCont=false;
+  //   // this.PANimg='';
+  // }
+
 
   onFormSubmit() {
     if (this.informationUpdateForm.valid) {

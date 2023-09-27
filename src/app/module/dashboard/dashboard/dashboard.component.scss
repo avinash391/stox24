@@ -315,9 +315,21 @@ tbody tr:last-child td:last-child {
 .dashboard-block .col-4{
   margin-bottom: 30px;
 }
-.dashboard-block .col-4:nth-child(1) .deposite-amount-col:hover{
+.dashboard-block .col-4:nth-child(1) .deposite-amount-col:hover ,
+.dashboard-block .col-4:nth-child(2) .deposite-amount-col:hover,
+.dashboard-block .col-4:nth-child(3) .deposite-amount-col:hover,
+.dashboard-block .col-4:nth-child(4) .deposite-amount-col:hover{
+  // background-color: green;
   background-color: green;
+    border: 2px solid #008000;
+    transform: scale(1.1);
 }
+.dashboard-block .col-4:nth-child(2) .deposite-amount-col:hover p,
+.dashboard-block .col-4:nth-child(3) .deposite-amount-col:hover p,
+.dashboard-block .col-4:nth-child(4) .deposite-amount-col:hover p{
+  color: #fff;
+}
+
 .dashboard-block .col-4 .deposite-amount-col:hover .dep-amnt h4 ,.dashboard-block .col-4 .deposite-amount-col:hover .current-bal p{
   color: #fff;
 }

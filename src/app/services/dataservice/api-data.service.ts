@@ -110,6 +110,7 @@ getDeposite(obj :any ,headers : HttpHeaders){
 }
 
 getInvestment(){
+
   return this.http.get('https://stox24.com/admin/api/investment-summary')
 }
 // getTopLooser
@@ -119,6 +120,19 @@ getTopLooser(){
 getTopgainers(){
   return this.http.get('https://stox24.com/admin/api/top-gainers')
 }
+
+dashboardSummary(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24.com/admin/api/dashboard-summary' ,options)
+}
+
+
+
+depositeRequest(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24.com/admin/api/list-deposit-requests' ,options)
+}
+
 
 getIFSCdetails(obj:any){
   return this.http.get('https://ifsc.razorpay.com/'+ obj.code)

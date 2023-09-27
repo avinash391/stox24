@@ -37,7 +37,7 @@ left:0px;
 
 // 
 
-.dashboard-right-column {
+.dashboard-right-column:not(.inner-page) {
     position: absolute;
     min-height: calc(100vh - 0px);
     left: 365px;

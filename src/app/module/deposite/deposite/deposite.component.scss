@@ -1,10 +1,11 @@
 .current-deposite{
     width: auto;
     display: inline-flex;
-    background-color: #6ee7b7;
+    background-color: #09ba06;
     padding: 20px 30px;
     border-radius: 5px;
     flex-wrap: wrap;
+    color: #fff;
 }
 .current-deposite strong{
     width: 100%;
@@ -24,8 +25,8 @@
     margin-right: 10px;
 }
 .deposite .btn-primary , .modal-popup .modal-footer .btn-primary{
-    background-color: #6ee7b7;
-    border-color: #6ee7b7;
+    background-color: #09ba06;
+    border-color: #09ba06;
 }
 .deposite-table {
     width: 100%;
@@ -51,4 +52,17 @@
 }
 .modal-body p span{
     font-weight: 700;
+}
+.modal-popup  button.close {
+    background: transparent;
+    border-radius: 100%;
+    padding: 3px 10px;
+    color: #09ba06;
+    border-color: #09ba06;
+}
+.modal-popup  .modal-dialog{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }

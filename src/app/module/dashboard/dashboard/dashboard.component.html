@@ -317,7 +317,7 @@
           <h4>Deposit Amount</h4>
         </div>
         <div class="current-bal">
-          <p>₹<span>0.00</span></p>
+          <p>₹<span>{{investedMoney.depositAmt}}</span></p>
         </div>
         <a href="/#/depositeDetails" class="Deposit-btn">Deposit Amount</a>
       </div>
@@ -328,7 +328,7 @@
           <h4>Wallet balance</h4>
         </div>
         <div class="current-bal">
-          <p>₹<span>0.00</span></p>
+          <p>₹<span>{{investedMoney.walletBalance}}</span></p>
         </div>
         <p class="">*Wallet balance is credited automatically every month to your registered bank account.</p>
       </div>
@@ -339,7 +339,7 @@
           <h4>Salaries</h4>
         </div>
         <div class="current-bal">
-          <p>₹<span>0.00</span></p>
+          <p>₹<span>{{investedMoney.salaries}}</span></p>
         </div>
         <p class="">0
           Active Salaries</p>
@@ -351,9 +351,9 @@
           <h4>Lifetime earning</h4>
         </div>
         <div class="current-bal">
-          <p>₹<span>0.00</span></p>
+          <p>₹<span>{{investedMoney.lifetimeEarning}}</span></p>
         </div>
-        <p class="">₹ 0.00
+        <p class="">₹ {{investedMoney.lifetimeEarning}}
           This month</p>
       </div>
     </div>
