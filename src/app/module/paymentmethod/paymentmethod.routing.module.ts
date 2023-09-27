@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 // import { BankDetailComponent } from './bank-detail/bank-detail.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PaymentDeposite } from './paymentmethod/paymentmethod.module';
+import { PaymentDeposite } from './paymentmethod/paymentmethod.component';
 
 const routes: Routes = [{path:"", component:PaymentDeposite}];
 

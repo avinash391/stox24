@@ -80,7 +80,7 @@ createAuthenticationHeaders()
 
       let headers = new HttpHeaders({
         // 'Content-Type' : 'application/json; charset=utf-8',
-        'Accept'       : 't/json',
+        'Accept': 'application/json',
         'Authorization': `${'dxzZBE905Hea1pc7MLdQDYvKUSA0he1rhZRQt83WlwBdC7Xqla4MQPPqC3heaTKj'}`,
        });
        let options = {

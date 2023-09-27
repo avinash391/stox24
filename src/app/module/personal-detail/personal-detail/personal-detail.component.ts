@@ -207,6 +207,11 @@ let obj2 = {
     "NominationAdhar": "",
     "NomineeRelationId": "${modData.relationship}",
     "NomineeDOB": "${modData.dob}"
+    "name": "${null}",
+    "dob": "${null}",
+    "fatherName": "${null}",
+    "number": "${null}",
+    "panType": "${null}"
   }`
 };
 
