@@ -14,10 +14,6 @@ export class DepositeDetails {
       amount: ['', [Validators.required, Validators.min(100000)]]
     });
   }
-  // closePopup(){
-  //   this.ActivePoup = false
-  // }
- 
 
   ngOnInit(): void {
     this.paymentForm = this.formBuilder.group({
@@ -28,7 +24,6 @@ export class DepositeDetails {
 
   validateAmount() {
     const amount = this.paymentForm.get('amount').value;
-
     // Check if the entered amount is at least ₹100,000
     this.isAmountValid = amount >= 100000;
   }
@@ -36,6 +31,7 @@ export class DepositeDetails {
     if (this.isAmountValid) {
     // Access the input data when the "Pay" button is clicked.
     const amount = this.paymentForm.get('amount').value;
+    localStorage.setItem('amount' , amount)
 
     // Now 'amount' contains the value from the input field.
     console.log('Amount to pay:', amount);

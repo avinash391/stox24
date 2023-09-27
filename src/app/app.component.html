@@ -29,7 +29,7 @@
 </app-header-login> -->
 <!-- dashboard-right-column -->
 <app-side-bar [ngClass]="{'displayHead':!service.isLoggedIn()}" ></app-side-bar>
- <section class="dashboard-section1 " [ngClass]="{'show':!isSidebarVisible}" [ngClass]="{'inner-page':!service.isLoggedIn()}" >
+ <section class="dashboard-section1 dashboard-right-column" [ngClass]="{'show':!isSidebarVisible}" [ngClass]="{'inner-page':!service.isLoggedIn()}" >
     <app-header [ngClass]="{'displayHead':!service.isLoggedIn()}"></app-header>
     <router-outlet></router-outlet>
 </section> 

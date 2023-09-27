@@ -1,0 +1,88 @@
+<section>
+    <div class="row">
+        <div class="col-6">
+            <div class="payment-amount-update">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="uploaded-ammount">
+                            <p>Amount to be paid</p>
+                            <span>₹ {{Ammount}}</span>
+                        </div>
+                        <div class="payment-options">
+                            <div class="heading">
+                                <p>Payment options and details</p>
+                            </div>
+                            <div class="bank-details">
+                                <div class="Transaction-Details">
+                                <span>Bank Transaction Details</span>
+                            </div>
+                            <div class="bank-name">
+                                <h1>induslnd Bank</h1>
+                            </div>
+                            <div class="acnt-details">
+                                <ul>
+                                    <li><span>Bank Name:</span> <strong>Indusind Bank</strong></li>
+                                    <li><span>Account no:</span> <strong>252020304050</strong></li>
+                                    <li><span>IFSC:</span> <strong>INDB0000162</strong></li>
+                                    <li><span>Account Name: </span> <strong>Tradecops Financial Service</strong></li>
+                                    <li><span>Bank Address:</span> <strong>BRANCH SEC 63 NOIDA U.P.</strong></li>
+
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="payment-options">
+                            <div class="heading">
+                                <p>QR Code</p>
+                            </div>
+                            <div class="qr-img">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/trade-cops-india.appspot.com/o/data%2Ftracecops_qr.jpg?alt=media&token=24ef5f77-ecb7-48bc-9f97-1eb24620ea6f"/>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="upload-recipt">
+                <div class="head">
+                    <h2>Upload receipt</h2>
+                    <p>Please upload the required information of the transaction correctly for verification.</p>
+                </div>
+                <div class="descript-details">
+                    <form [formGroup]="informationUpdateForm" (ngSubmit)="onFormSubmit()">
+                        <div class="form-feild">
+                            <label>Transaction Date</label>
+                            <input type="date"  formControlName="transaction_date"/>
+                        </div>
+                        <div class="form-feild">
+                            <select   formControlName="payment_type">
+                                <option value="">transfer Mode</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value=" QR Code"> QR Code</option>
+                            </select>
+                        </div>
+                        <div class="form-feild file-upload-feild">
+                            <input type="file"  formControlName="screenshot"/>
+                            <span class="file-size">
+                                Click to upload receipt image ( .jpg )
+                                [ max size: 2 mb ]</span>
+                        </div>
+                        <div class="form-feild">
+                            <input type="text" placeholder="Transaction number"/>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="btn btn-primary">Submit for Review</button>
+                        </div>
+                    </form>
+                    
+                      
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

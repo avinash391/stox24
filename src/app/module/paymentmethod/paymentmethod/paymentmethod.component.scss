@@ -1,0 +1,109 @@
+.uploaded-ammount {
+    width: 100%;
+    background: #2fc27f;
+    padding: 20px 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+.uploaded-ammount p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.uploaded-ammount span {
+    font-size: 30px;
+    font-weight: 500;
+}
+.payment-options {
+    width: 100%;
+    margin-top: 50px;
+}
+.heading  p{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.Transaction-Details {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+
+.bank-name {
+    width: 100%;
+    /* text-align: center; */
+    background: #fff;
+    padding: 70px  20px;
+    /* font-size: 100px; */
+}
+.bank-name h1{
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 700;
+} 
+.acnt-details {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.acnt-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+.qr-img img{
+    max-width: 100%;
+}
+.upload-recipt {
+    width: 100%;
+    padding: 10px;
+}
+.form-feild label {
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+.form-feild input , .form-feild select{
+    width: 100%;
+    padding: 0px 20px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #bbbbbb;
+}
+.form-feild {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.file-upload-feild {
+    width: 50% !important;
+    padding: 10px;
+    // background: #fff;
+    margin: 30px auto;
+    height: 210px;
+    border: 3px dotted #494646;
+    position: relative;
+}
+
+.file-upload-feild input{
+    height: 100%;
+    opacity: 0;
+}
+span.file-size {
+    position: absolute;
+    
+    top: 20px;
+    // bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.submit-btn {
+    width: 100%;
+    text-align: right;
+}
+.submit-btn button{
+    background-color: #2fc27f;
+    border-color: #2fc27f;
+}
