@@ -90,7 +90,13 @@ const routes: Routes = [
         (m) => m.BankDetailModule
       ),
   },
-
+  {
+    path: 'paymentupdate',
+    loadChildren: () =>
+      import('./module/paymentmethod/paymentmothod.module').then(
+        (m) => m.PaymentDepositeDetails
+      ),
+  },
    {
     path: '**', redirectTo: '/dashboard'
   }

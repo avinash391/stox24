@@ -80,7 +80,7 @@ createAuthenticationHeaders()
 
       let headers = new HttpHeaders({
         // 'Content-Type' : 'application/json; charset=utf-8',
-        'Accept'       : 'application/json',
+        'Accept'       : 't/json',
         'Authorization': `${'dxzZBE905Hea1pc7MLdQDYvKUSA0he1rhZRQt83WlwBdC7Xqla4MQPPqC3heaTKj'}`,
        });
        let options = {
@@ -104,16 +104,10 @@ getDigiFiles(obj:any){
   return this.http.post('https://signzy.tech/api/v2/patrons/626167c93868b81c8255d9bb/digilockers',obj, this.createAuthenticationHeaders()).pipe(map(res=>{return res}));
 }
 
-
-
-//
-
-
-
-getDeposite(){
-  return this.http.get('https://stox24.com/admin/api/create-deposit-request')
+getDeposite(obj :any ,headers : HttpHeaders){
+  const options = { headers };
+  return this.http.post('https://stox24.com/admin/api/create-deposit-request', obj , options)
 }
-
 
 getInvestment(){
   return this.http.get('https://stox24.com/admin/api/investment-summary')
