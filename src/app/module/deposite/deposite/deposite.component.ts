@@ -1,24 +1,62 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
-import { GlobalService } from 'src/app/services/global.service';
-import{SharedDataService} from "../../../services/sharedData/shared-data.service"
-import { ToastrService } from 'ngx-toastr';
-import swal from 'sweetalert2';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-bank-detail',
   templateUrl: './deposite.component.html',
   styleUrls: ['./deposite.component.scss']
 })
 export class DepositeDetails {
-  ActivePoup: boolean = false
-  openDepositePopup(){
-     this.ActivePoup = true
+  ActivePoup: boolean = false;
+  paymentForm: FormGroup |any;
+  constructor(private formBuilder: FormBuilder) {
+    this.paymentForm = this.formBuilder.group({
+      amount: ['', [Validators.required, Validators.min(100000)]]
+    });
   }
   closePopup(){
     this.ActivePoup = false
   }
  
-}
 
+  ngOnInit(): void {
+    this.paymentForm = this.formBuilder.group({
+      amount: [''], // You can set default values or validators here if needed.
+    });
+  }
+  isAmountValid: boolean = false;
+
+  validateAmount() {
+    const amount = this.paymentForm.get('amount').value;
+
+    // Check if the entered amount is at least ₹100,000
+    this.isAmountValid = amount >= 100000;
+  }
+  onPayButtonClick() {
+    if (this.isAmountValid) {
+    // Access the input data when the "Pay" button is clicked.
+    const amount = this.paymentForm.get('amount').value;
+
+    // Now 'amount' contains the value from the input field.
+    console.log('Amount to pay:', amount);
+
+    // You can perform further actions with the 'amount' value.
+
+    // Clear the input field after payment
+    this.paymentForm.reset();
+    }
+  }
+
+  onCancelButtonClick() {
+    // Clear the input field when the "Cancel" button is clicked
+    this.paymentForm.reset();
+  }
+
+  openDepositePopup() {
+    this.ActivePoup = true;
+  }
+
+  closePopup() {
+    this.ActivePoup = false;
+  }
+}
