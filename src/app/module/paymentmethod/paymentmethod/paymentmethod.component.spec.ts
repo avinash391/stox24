@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PaymentDeposite } from './paymentmethod.module';
+import { PaymentDeposite } from './paymentmethod.component';
 
 
 describe('PaymentDeposite', () => {

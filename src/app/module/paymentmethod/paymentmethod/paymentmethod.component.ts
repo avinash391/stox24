@@ -63,7 +63,7 @@ export class PaymentDeposite {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json', // Adjust content type as needed
       });
-      
+
       const formValues = this.informationUpdateForm.value;
       console.log('Form submitted with values:', formValues);
       this.services.getDeposite(formValues ,headers).subscribe((data) => {

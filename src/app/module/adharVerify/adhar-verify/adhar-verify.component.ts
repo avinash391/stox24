@@ -51,15 +51,15 @@ export class AdharVerifyComponent {
   clVal:boolean= false;
   uploadButton:boolean = false;
   // constructor(private service: ApiDataService, private globalService: GlobalService) { }
-    constructor(private services:ApiDataService, 
-      private serviceslogin:LoginService,  
+    constructor(private services:ApiDataService,
+      private serviceslogin:LoginService,
       private globalService:GlobalService,
-      private formBuilder: FormBuilder,  
+      private formBuilder: FormBuilder,
       private router:Router,private http: HttpClient,
       public sharedData:SharedDataService,
       private toastrService: ToastrService,
       private activateRout: ActivatedRoute) {
-    
+
    }
 
 
@@ -74,19 +74,19 @@ export class AdharVerifyComponent {
       this.reqId = this.activateRout.snapshot.queryParamMap.get('requestId');
       // this.uploadButton=true;
       this.getEAadhar();
- 
-      
-    }
-    
-  }
- 
 
-//DIGILOCKERS API's 
+
+    }
+
+  }
+
+
+//DIGILOCKERS API's
 testData:any
 reqDigiUrl(){
   console.log("this.domain" ,this.domain)
   let obj = {
-    
+
       "task": "url",
       "essentials":{
         "signup":"true",
@@ -111,13 +111,13 @@ reqDigiUrl(){
     console.log(data)
     this.testData=JSON.stringify(data)
     this.sharedData.loader(false);
-   localStorage.setItem('testdata',this.testData) 
+   localStorage.setItem('testdata',this.testData)
     this.digiUrl=data.result.url;
     this.requestId=data.result.requestId;
      window.open(this.digiUrl);
-   
+
   },(error)=>{
-    
+
     this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
     this.sharedData.loader(false)
   });
@@ -130,21 +130,21 @@ getEAadhar(){
       "essentials":{
         "requestId":  this.reqId
       },
-      
+
   }
   this.sharedData.loader(true);
   this.services.getDigiEAadhar(obj).subscribe((data:any)=>{
     console.log("getEadhar",data);
     this.personalDetails=data;
     this.validAdharStatus=data.result.x509Data.validAadhaarDSC
- 
 
-  
+
+
     if( this.validAdharStatus== "yes"){
       // this.sharedData.toggleClassValue(obj);
         this.toastrService.success('Your Aadhaar has been verified!', 'Aadhaar Verification Done!');
         this.uploadButton=true;
-        
+
       // sessionStorage.setItem('uid',(data.result.uid));
       // sessionStorage.setItem('name',(data.result.name));
       // sessionStorage.setItem('dob',(data.result.dob));
@@ -156,10 +156,10 @@ getEAadhar(){
       // sessionStorage.setItem('country',(data.result.splitAddress.country[2]));
       this.getAdharDetails();
       this.updateAddress();
-    
+
     }
     },(error)=>{
-    
+
     this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
     this.sharedData.loader(false)
   });
@@ -184,7 +184,7 @@ this.services.UPDATE_PROFILE_ADDR_DOB(obj).subscribe((data:any)=>{
     this.sharedData.loader(false);
   }
 },(error)=>{
-    
+
   this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
   this.sharedData.loader(false)
 });
@@ -194,24 +194,24 @@ getAdharDetails(){
   let obj = {
     "task": "getDetails",
       "essentials":{"requestId":  this.reqId},
-      
+
   }
   this.services.getDigiDetails(obj).subscribe((data:any)=>{
     // console.log("getAdhardetails",data)
     // console.log("adhaardetails",data.result.files)
 
     this.fileId=data.result.files[0].id;
-    
- 
+
+
     data.result.files.forEach((el:any) => {
       if(el.name == "Aadhaar Card"){
         this.getAdharFiles(el.id);
       }
-      
+
     });
-    
+
   },(error)=>{
-    
+
     this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
     this.sharedData.loader(false)
   });
@@ -234,7 +234,7 @@ getAdharFiles(val:any){
     this.uploadEAdhardb(val);
     this.isNextButtonDisabled = false;
   },(error)=>{
-    
+
     this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
     this.sharedData.loader(false)
   });
@@ -258,26 +258,26 @@ uploadEAdhardb(val:any){
     this.sharedData.loader(false);
     // this.navigate();
     },(error)=>{
-    
+
       this.toastrService.error('Something went Wrong!!!. Please try again.','Error!')
       this.sharedData.loader(false)
     });
 }
 
 navigate(){
-    
+
   if( this.validAdharStatus =='yes'){
-  
-   
+
+
     this.sharedData.toggleClassValue(2);
     this.router.navigate(['/onboading-kyc/personal-detail']);
-   
+
   }else {
     swal.fire('Error!', 'Something went wrong. Please try again!')
   }
 }
 ngOnDestroy() {
-  
+
 }
 
 }

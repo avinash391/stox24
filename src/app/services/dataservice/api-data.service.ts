@@ -80,7 +80,7 @@ createAuthenticationHeaders()
 
       let headers = new HttpHeaders({
         // 'Content-Type' : 'application/json; charset=utf-8',
-        'Accept'       : 't/json',
+        'Accept': 'application/json',
         'Authorization': `${'dxzZBE905Hea1pc7MLdQDYvKUSA0he1rhZRQt83WlwBdC7Xqla4MQPPqC3heaTKj'}`,
        });
        let options = {
@@ -152,6 +152,23 @@ GENERATE_OTP(obj:any){
 GET_PROFILE_OTP_VERIFY_STATUS(obj:any){
   return this.http.get(this.domain +'GET_PROFILE_OTP_VERIFY_STATUS?Profile='+obj.Profile);
 }
+
+
+// profile info by stox
+getProfileInfo() {
+  // Get the authorization token from local storage
+  const token = localStorage.getItem('token');
+
+  // Create HttpHeaders with the token
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+    // Add other headers if needed
+  });
+
+  // Make the GET request with headers
+  return this.http.get(`${this.domainSecond}profile`, { headers });
+}
+
 GET_USER_INFO(obj:any){
 return this.http.get(this.domain + 'GET_USER_INFO?Key='+obj.key+ '&Profile=' + obj.Profile);
 }
