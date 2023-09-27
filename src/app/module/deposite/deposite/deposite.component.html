@@ -45,16 +45,19 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+                <form [formGroup]="paymentForm">
                 <div class="modal-body">
                   <p>Please enter an amount of at <span>least₹100000</span></p>
                   <div class="ammount-feild">
-                    <input type="number"  placeholder="Ammount"  formControlName="amount"/>
+                    <input type="number" placeholder="Amount" formControlName="amount" (input)="validateAmount()"/>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary">Cancel</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Pay</button>
+
+                  <button type="button" class="btn btn-secondary" (click)="onCancelButtonClick()">Cancel</button>
+                  <button type="button" class="btn btn-primary" [disabled]="!paymentForm.valid" (click)="onPayButtonClick()">Pay</button>
                 </div>
+              </form>
               </div>
             </div>
           </div>
