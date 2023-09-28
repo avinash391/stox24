@@ -68,14 +68,6 @@ export class DepositeDetails {
     });
     this.services.depositeRequest(headers).subscribe((data: any) => {
       this.investedMoney = data.data;
-      // for(let i = 0; i < this.investedMoney.length; i++){
-      //   // console.log('i',i)
-      //   if(this.investedMoney[i].status == "Approved"){
-      //       const totalAmmount = this.investedMoney[i].amount += this.investedMoney[i].amount
-      //       // const totalAmmount = this.investedMoney[i].amount;
-      //       console.log('totalAmmount' ,totalAmmount)
-      //   }
-      // }
       const sumOfApprovedValues = this.investedMoney
         .filter((obj : any) => obj.status === 'Approved') // Filter objects with status 'approved'
         .reduce(

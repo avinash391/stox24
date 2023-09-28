@@ -53,7 +53,7 @@
                     <p>Please upload the required information of the transaction correctly for verification.</p>
                 </div>
                 <div class="descript-details">
-                    <form [formGroup]="informationUpdateForm" (ngSubmit)="onFormSubmit()">
+                    <form [formGroup]="informationUpdateForm" (ngSubmit)="onFormSubmit()" enctype="multipart/form-data">
                         <div class="form-feild">
                             <label>Transaction Date</label>
                             <input type="date"  formControlName="transaction_date"/>
@@ -66,7 +66,9 @@
                             </select>
                         </div>
                         <div class="form-feild file-upload-feild">
-                            <!-- <input type="file"  formControlName="screenshot"/> -->
+                            <!-- <input type="file"  formControlName="screenshot" accept="image/*"/> -->
+                            <input type="file"  formControlName="screenshot" accept="image/*" (change)="onFileSelected($event)" #fileUpload/>
+                            
                             <span class="file-size">
                                 Click to upload receipt image ( .jpg )
                                 [ max size: 2 mb ]</span>

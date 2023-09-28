@@ -97,6 +97,20 @@ const routes: Routes = [
         (m) => m.PaymentDepositeDetails
       ),
   },
+  {
+    path: 'salaries',
+    loadChildren: () =>
+      import('./module/salaries/salaires.routing.module').then(
+        (m) => m.SalariesDetailsRoutingModule
+      ),
+  },
+  {
+    path: 'order-history',
+    loadChildren: () =>
+      import('./module/orderhistory/orderhistory.routing.module').then(
+        (m) => m.OrderHsitoryRoutingModule
+      ),
+  },
    {
     path: '**', redirectTo: '/dashboard'
   }

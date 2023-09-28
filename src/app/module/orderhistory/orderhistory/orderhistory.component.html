@@ -1,0 +1,46 @@
+<section>
+    <div  class="row">
+        <div class="col-6">
+            <div class="current-deposite-block">
+                <div class="current-deposite">
+                    <strong>Order History</strong>
+                    <!-- <p>All salaries will be listed here</p> -->
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="deposite-table">
+        <div class="deposite-table-inner">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">broker</th>
+                    <th scope="col">date</th>
+                    <th scope="col">Order Type</th>
+                    <th scope="col">OrderPrice</th>
+                    <th scope="col">pricePerShare</th>
+                    <th scope="col">profitLoss</th>
+                    <th scope="col">quantity</th>
+
+                  </tr>
+                </thead>
+                <tbody> 
+                  <tr>
+                    <td>{{Orderhistorylist[0].stockSymbol}}</td>
+                    <td>{{Orderhistorylist[0].broker}}</td>
+                    <td>{{Orderhistorylist[0].date}}</td>
+                    <td>{{Orderhistorylist[0].orderType}}</td>
+                    <td>{{Orderhistorylist[0].profitLoss}}</td>
+                    <td>{{Orderhistorylist[0].pricePerShare}}</td>
+                    <td>{{Orderhistorylist[0].profitLoss}}</td>
+                    <td>{{Orderhistorylist[0].quantity}}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+</section>

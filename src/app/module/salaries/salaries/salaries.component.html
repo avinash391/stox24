@@ -1,0 +1,40 @@
+<section>
+    <div  class="row">
+        <div class="col-6">
+            <div class="current-deposite-block">
+                <div class="current-deposite">
+                    <strong>Salary</strong>
+                    <p>All salaries will be listed here</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="deposite-table">
+        <div class="deposite-table-inner">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">DATE</th>
+                    <th scope="col">OWNER</th>
+                    <th scope="col">	ISSUED FOR MONTH</th>
+                    <th scope="col">START MONTH</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ACTION</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of investedMoney">
+                    <!-- <td>{{item.transaction_date}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.transaction_date}}</td>
+                    <td>{{item.payment_type}}</td>
+                    <td>{{item.status}}</td> -->
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+</section>
