@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment, environmentSecond } from 'src/environments/environment';
 
 @Injectable({
@@ -104,10 +104,32 @@ getDigiFiles(obj:any){
   return this.http.post('https://signzy.tech/api/v2/patrons/626167c93868b81c8255d9bb/digilockers',obj, this.createAuthenticationHeaders()).pipe(map(res=>{return res}));
 }
 
-getDeposite(obj :any ,headers : HttpHeaders){
-  const options = { headers };
-  return this.http.post('https://stox24.com/admin/api/create-deposit-request', obj , options)
+// coment my deposite api
+
+// getDeposite(obj :any ,headers : HttpHeaders){
+//   const options = { headers };
+//   return this.http.post('https://stox24.com/admin/api/create-deposit-request', obj , options)
+// }
+
+
+submitFormData(formData: FormData, token: string): Observable<any> {
+  // Create HttpHeaders with the token
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${token}`,
+  });
+
+  // Adjust the API endpoint as needed
+  const apiUrl = 'https://stox24.com/admin/api/create-deposit-request';
+
+  // Send the HTTP POST request with headers and form data
+  return this.http.post(apiUrl, formData, { headers });
 }
+
+
+
+
+
+
 
 getInvestment(){
 

@@ -66,13 +66,18 @@
                             </select>
                         </div>
                         <div class="form-feild file-upload-feild">
-                            <!-- <input type="file"  formControlName="screenshot"/> -->
+                            <input
+                            type="file"
+                            formControlName="screenshot"
+                            (change)="onFileSelected($event)"
+                            accept="image/*"
+                            />
                             <span class="file-size">
                                 Click to upload receipt image ( .jpg )
                                 [ max size: 2 mb ]</span>
                         </div>
                         <div class="form-feild">
-                            <input type="text" placeholder="Transaction number"/>
+                            <input type="text" placeholder="Transaction number" formControlName="amount"/>
                         </div>
                         <div class="submit-btn">
                             <button type="submit" class="btn btn-primary">Submit for Review</button>
