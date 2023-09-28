@@ -164,13 +164,28 @@ dashboardSummary(headers : HttpHeaders){
   return this.http.get('https://stox24.com/admin/api/dashboard-summary' ,options)
 }
 
-
-
 depositeRequest(headers : HttpHeaders){
   const options = { headers };
   return this.http.get('https://stox24.com/admin/api/list-deposit-requests' ,options)
 }
 
+
+
+SalaryDetails(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24.com/admin/api/list-salaries' ,options)
+}
+
+
+OrderHistory(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24admin.techbuyhelp.com/api/list-orders-history' ,options)
+}
+
+
+
+
+// 
 
 getIFSCdetails(obj:any){
   return this.http.get('https://ifsc.razorpay.com/'+ obj.code)

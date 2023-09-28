@@ -12,7 +12,6 @@ export class PaymentDeposite implements OnInit {
   Ammount: any;
   informationUpdateForm: any = FormGroup;
   selectedFile: any;
-
   get f() {
     return this.informationUpdateForm.controls;
   }

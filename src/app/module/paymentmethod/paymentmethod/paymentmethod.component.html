@@ -53,7 +53,7 @@
                     <p>Please upload the required information of the transaction correctly for verification.</p>
                 </div>
                 <div class="descript-details">
-                    <form [formGroup]="informationUpdateForm" (ngSubmit)="onFormSubmit()">
+                    <form [formGroup]="informationUpdateForm" (ngSubmit)="onFormSubmit()" enctype="multipart/form-data">
                         <div class="form-feild">
                             <label>Transaction Date</label>
                             <input type="date"  formControlName="transaction_date"/>
