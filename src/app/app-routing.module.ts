@@ -27,6 +27,18 @@ const routes: Routes = [
   // },
 
   {
+    path: 'user-live',
+    loadChildren: () =>
+      import('./module/userLive/userLive.module').then(
+        (m) => m.UserLiveModule
+      ),
+  },
+
+
+
+
+
+  {
     path: 'dashboard',
     loadChildren: () =>
       import('./module/dashboard/dashboard.module').then(
@@ -74,14 +86,19 @@ const routes: Routes = [
       import('./module/userprofile/userprofile.module').then(
         (m) => m.UserprofileModule
       ),
-  },{
+  }
+
+
+
+
+  ,{
     path: 'uikit',
     loadChildren: () =>
       import('./ui-kit/ui-kit.module').then((m) => m.UiKitModule),
   },
   {
-    path: 'confirmation-page', loadChildren: () => import('./module/confirmation-page/confirmation-page.module').then(m => m.ConfirmationPageModule) 
-    
+    path: 'confirmation-page', loadChildren: () => import('./module/confirmation-page/confirmation-page.module').then(m => m.ConfirmationPageModule)
+
   },
   {
     path: 'depositeDetails',

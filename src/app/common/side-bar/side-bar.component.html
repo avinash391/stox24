@@ -45,7 +45,7 @@
         </li>
         <li class="side-bar-direction" [routerLinkActive]="['active']">
            <div class="icon-link">
-              <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>  
+              <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>
                 <span class="link-name">Deposite</span> </a>
               <i class="bx bxs-chevron-down arrow"></i>
            </div>
@@ -61,6 +61,15 @@
            <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>
            <!-- <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul> -->
         </li>
+        <li [routerLinkActive]="['active']" class="side-bar-direction">
+          <div class="icon-link">
+            <a routerLink="user-live"> <!-- Update the routerLink to 'user-live' -->
+              <i class="bx bx-user"></i>
+              <span class="link-name">Live</span>
+            </a>
+          </div>
+        </li>
+
      </ul>
   </div>
 

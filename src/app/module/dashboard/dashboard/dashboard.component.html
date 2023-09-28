@@ -305,7 +305,7 @@
 
 
 
- --> 
+ -->
 
 
 
@@ -372,4 +372,25 @@
     </div>
 
   </div>
+  <div class="dsb-card-left2 ">
+    <div class="header-decor"><h5 class="color-green0 mb-0">Top Gainer <span class="badge rounded-pill bg-success">31</span></h5></div>
+    <ul class="home-small-scroll">
+      <li *ngFor="let item of portfolioData">
+        <div class="cd-flex-pro align-items-center">
+          <div>
+            <p class="comp-name">{{ item.stock_symbol }}</p>
+          </div>
+          <div class="text-end">
+            <p class="comp-val">{{ item.quantity }}</p>
+            <!-- You can calculate profit here if needed -->
+          </div>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
  </section>

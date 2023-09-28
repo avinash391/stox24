@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   investmentLooser: any = undefined;
   investmentgetainers:any = undefined;
   investedMoney : any = undefined;
+  portfolioData: any;
 
   constructor(private services: ApiDataService) { }
 
@@ -26,7 +27,24 @@ export class DashboardComponent implements OnInit {
     this.getTopLoosers();
     this.getTopgainersApi();
     this.dashboardSummarydata()
+    this.getPortfolioData()
   }
+
+  getPortfolioData() {
+    this.services.portfolio().subscribe(
+      (data: any) => {
+        this.portfolioData = data;
+        console.log(this.portfolioData, "this is portfolio data");
+      },
+      (error) => {
+        console.error('Error fetching portfolio data', error);
+      }
+    );
+  }
+
+
+
+
 
   getInvestment() {
     this.services.getInvestment().subscribe((data: any) => {
