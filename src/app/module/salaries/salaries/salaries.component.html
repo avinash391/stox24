@@ -20,17 +20,18 @@
                     <th scope="col">	ISSUED FOR MONTH</th>
                     <th scope="col">START MONTH</th>
                     <th scope="col">STATUS</th>
-                    <th scope="col">ACTION</th>
-
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let item of investedMoney">
-                    <!-- <td>{{item.transaction_date}}</td>
-                    <td>{{item.amount}}</td>
-                    <td>{{item.transaction_date}}</td>
-                    <td>{{item.payment_type}}</td>
-                    <td>{{item.status}}</td> -->
+                  <tr>
+                    <!-- *ngFor="let item of investedMoney" -->
+                    <td>{{SalariesList[0].date}}</td>
+                    <td>{{SalariesList[0].user_id}}</td>
+                    <td>{{SalariesList[0].issued_for_month}}</td>
+                    <td>{{SalariesList[0].start_month}}</td>
+                    <td>{{SalariesList[0].status}}</td> 
+                    <!-- <td>{{SalariesList[0].status}}</td> -->
+
                   </tr>
                 </tbody>
               </table>
