@@ -3,8 +3,8 @@
         <div class="col-6">
             <div class="current-deposite-block">
                 <div class="current-deposite">
-                    <strong>Salary</strong>
-                    <p>All salaries will be listed here</p>
+                    <strong>Returns</strong>
+                    <p>All Returns will be listed here</p>
                 </div>
             </div>
         </div>
@@ -15,21 +15,21 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">DATE</th>
-                    <th scope="col">OWNER</th>
-                    <th scope="col">	ISSUED FOR MONTH</th>
-                    <th scope="col">START MONTH</th>
-                    <th scope="col">STATUS</th>
+                    <th scope="col">Quater</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">INIIAL INVESTED(IN CRORES)</th>
+                    <th scope="col">QUATERLY PROFILT/LOSS(%)</th>
+                    <th scope="col">PROFIT/LOSS AMMOUNT(in crore)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of SalariesList">
                     <!--  -->
-                    <td>{{item.date}}</td>
-                    <td>{{item.user_id}}</td>
-                    <td>{{item.issued_for_month}}</td>
-                    <td>{{item.start_month}}</td>
-                    <td>{{item.status}}</td> 
+                    <td>{{item.quarter}}</td>
+                    <td>{{item.year}}</td>
+                    <td>{{item.initial_investment}}</td>
+                    <td>{{item.profit_loss_percentage}}%</td>
+                    <td>{{item.profit_loss_amount}}</td> 
                     <!-- <td>{{SalariesList[0].status}}</td> -->
 
                   </tr>
