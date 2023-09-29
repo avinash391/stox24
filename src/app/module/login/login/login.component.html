@@ -25,16 +25,12 @@
                             <input type="text"    formControlName="userName" ariaAutoComplete="off" [ngClass]="{ 'is-invalid': submited && f.userName.errors }" class="form-control ab-border0" placeholder=".">
                             <label>Email id / Client Code</label>
                             <div *ngIf="submited && f.userName.errors" class="invalid-feedback">
-
                               <div *ngIf="f.userName.errors?.required">Email id/Client Code is required.</div>
-
                             </div>
                           </div>
 
                           <div *ngIf="submited && f.userName.errors" class="invalid-feedback">
-
                             <div *ngIf="f.userName.errors?.required">Email id/Client is required.</div>
-
                           </div>
 
                          </div>

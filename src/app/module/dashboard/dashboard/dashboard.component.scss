@@ -402,6 +402,7 @@ tbody tr:last-child td:last-child {
 .dsb-card-left2 {
   background: #fff;
   border-radius: 8px;
+  margin-top:20px;
  
   box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, 0), 0px 0px 15px 0 rgba(0, 0, 0, 0.08);
     ul{
@@ -469,12 +470,13 @@ tbody tr:last-child td:last-child {
 }
 
 .home-small-scroll{
-  height: 368px;
+  // height: 368px;
+  height: auto;
     overflow: auto;
 }
 
 .header-decor{
-  background: #4b66d7;
+  background: #000000;
     border-radius: 8px 8px 0px 0px;
     padding: 10px;
       h5{

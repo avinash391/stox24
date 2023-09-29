@@ -31,7 +31,7 @@ export class SalariesDetails {
         });
       this.services.SalaryDetails(headers).subscribe((data : any) => {
         this.SalariesList = data.data;
-        console.log('this.SalariesList ' ,this.SalariesList)
+        // console.log('this.SalariesList ' ,this.SalariesList)
       })
     }
 }
