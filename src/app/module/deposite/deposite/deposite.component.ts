@@ -13,6 +13,7 @@ export class DepositeDetails {
   paymentForm: FormGroup | any;
   investedMoney: any = undefined;
   totalAmount : any = undefined
+  portfolio: any;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -34,6 +35,10 @@ export class DepositeDetails {
       amount: [''], // You can set default values or validators here if needed.
     });
     this.investedMoneyDetails();
+
+
+
+
   }
   isAmountValid: boolean = false;
 

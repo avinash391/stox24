@@ -131,6 +131,22 @@ submitFormData(formData: FormData, token: string): Observable<any> {
 
 
 
+portfolio(){
+  const token = localStorage.getItem('token');
+
+  // Create HttpHeaders with the token
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+    // Add other headers if needed
+  });
+  return this.http.get('https://stox24admin.techbuyhelp.com/api/portfolio',{ headers })
+}
+
+
+
+
+
+
 getInvestment(){
 
   return this.http.get('https://stox24.com/admin/api/investment-summary')
