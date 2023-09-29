@@ -23,13 +23,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <!-- *ngFor="let item of investedMoney" -->
-                    <td>{{SalariesList[0].date}}</td>
-                    <td>{{SalariesList[0].user_id}}</td>
-                    <td>{{SalariesList[0].issued_for_month}}</td>
-                    <td>{{SalariesList[0].start_month}}</td>
-                    <td>{{SalariesList[0].status}}</td> 
+                  <tr *ngFor="let item of SalariesList">
+                    <!--  -->
+                    <td>{{item.date}}</td>
+                    <td>{{item.user_id}}</td>
+                    <td>{{item.issued_for_month}}</td>
+                    <td>{{item.start_month}}</td>
+                    <td>{{item.status}}</td> 
                     <!-- <td>{{SalariesList[0].status}}</td> -->
 
                   </tr>

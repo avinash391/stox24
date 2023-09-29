@@ -12,11 +12,7 @@ export class OrderHistory {
   Orderhistorylist : any = undefined;
 
   
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private services: ApiDataService
-  ) {}
+  constructor(private formBuilder: FormBuilder, private router: Router,    private services: ApiDataService) {}
 
 
   ngOnInit(): void {

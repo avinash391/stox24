@@ -27,15 +27,16 @@
                   </tr>
                 </thead>
                 <tbody> 
-                  <tr>
-                    <td>{{Orderhistorylist[0].stockSymbol}}</td>
-                    <td>{{Orderhistorylist[0].broker}}</td>
-                    <td>{{Orderhistorylist[0].date}}</td>
-                    <td>{{Orderhistorylist[0].orderType}}</td>
-                    <td>{{Orderhistorylist[0].profitLoss}}</td>
-                    <td>{{Orderhistorylist[0].pricePerShare}}</td>
-                    <td>{{Orderhistorylist[0].profitLoss}}</td>
-                    <td>{{Orderhistorylist[0].quantity}}</td>
+                  <tr *ngFor="let  Orderhistorylist of Orderhistorylist">
+                    <!-- <tr>   -->
+                    <td>{{Orderhistorylist.stockSymbol}}</td>
+                    <td>{{Orderhistorylist.broker}}</td>
+                    <td>{{Orderhistorylist.date}}</td>
+                    <td>{{Orderhistorylist.orderType}}</td>
+                    <td>{{Orderhistorylist.profitLoss}}</td>
+                    <td>{{Orderhistorylist.pricePerShare}}</td>
+                    <td>{{Orderhistorylist.profitLoss}}</td>
+                    <td>{{Orderhistorylist.quantity}}</td>
 
                   </tr>
                 </tbody>

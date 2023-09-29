@@ -16,4 +16,4 @@ import { SalariesDetails } from './salaries/salaries.component';
     ReactiveFormsModule
   ]
 })
-export class BankDetailModule { }
+export class SalariesDetailsModule { }

@@ -100,15 +100,15 @@ const routes: Routes = [
   {
     path: 'salaries',
     loadChildren: () =>
-      import('./module/salaries/salaires.routing.module').then(
-        (m) => m.SalariesDetailsRoutingModule
+      import('./module/salaries/salaries.module').then(
+        (m) => m.SalariesDetailsModule
       ),
   },
   {
     path: 'order-history',
     loadChildren: () =>
-      import('./module/orderhistory/orderhistory.routing.module').then(
-        (m) => m.OrderHsitoryRoutingModule
+      import('./module/orderhistory/orderhistory.module').then(
+        (m) => m.orderDetailsModule
       ),
   },
    {
