@@ -43,9 +43,6 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
-
-
   getInvestment() {
     this.services.getInvestment().subscribe((data: any) => {
       this.investmentData = data;
@@ -61,6 +58,7 @@ export class DashboardComponent implements OnInit {
   getTopgainersApi() {
     this.services.getTopgainers().subscribe((data: any) => {
       this.investmentgetainers = data;
+
       console.log(this.investmentgetainers, "this is gainer data I'm getting");
     });
   }

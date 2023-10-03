@@ -3,40 +3,39 @@
         <div class="col-6">
             <div class="current-deposite-block">
                 <div class="current-deposite">
-                    <strong>Order History</strong>
+                    <strong>Transaction History</strong>
                     <!-- <p>All salaries will be listed here</p> -->
                 </div>
             </div>
         </div>
-        
     </div>
     <div class="deposite-table">
         <div class="deposite-table-inner">
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Symbol</th>
-                    <th scope="col">broker</th>
-                    <th scope="col">date</th>
-                    <th scope="col">Order Type</th>
-                    <th scope="col">OrderPrice</th>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Ammount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Payment Type</th>
+                    <!-- <th scope="col">OrderPrice</th>
                     <th scope="col">pricePerShare</th>
                     <th scope="col">profitLoss</th>
-                    <th scope="col">quantity</th>
+                    <th scope="col">quantity</th> -->
 
                   </tr>
                 </thead>
                 <tbody> 
-                  <tr *ngFor="let  Orderhistorylist of Orderhistorylist">
+                  <tr *ngFor="let Orderhistorylist of Orderhistorylist">
                     <!-- <tr>   -->
-                    <td>{{Orderhistorylist.stockSymbol}}</td>
-                    <td>{{Orderhistorylist.broker}}</td>
+                    <td>{{Orderhistorylist.orderId}}</td>
+                    <td>{{Orderhistorylist.pricePerShare}}</td>
                     <td>{{Orderhistorylist.date}}</td>
                     <td>{{Orderhistorylist.orderType}}</td>
-                    <td>{{Orderhistorylist.profitLoss}}</td>
+                    <!-- <td>{{Orderhistorylist.profitLoss}}</td>
                     <td>{{Orderhistorylist.pricePerShare}}</td>
                     <td>{{Orderhistorylist.profitLoss}}</td>
-                    <td>{{Orderhistorylist.quantity}}</td>
+                    <td>{{Orderhistorylist.quantity}}</td> -->
 
                   </tr>
                 </tbody>

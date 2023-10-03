@@ -173,7 +173,7 @@ depositeRequest(headers : HttpHeaders){
 
 SalaryDetails(headers : HttpHeaders){
   const options = { headers };
-  return this.http.get('https://stox24.com/admin/api/list-salaries' ,options)
+  return this.http.get('https://stox24admin.techbuyhelp.com/api/returns' ,options)
 }
 
 
