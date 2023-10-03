@@ -10,7 +10,9 @@ import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
 })
 export class SalariesDetails {
     SalariesList : any;
-
+    currentbalance  : any;
+    CurrentSatate  : any; 
+  
   
     constructor(
       private formBuilder: FormBuilder,
@@ -18,11 +20,11 @@ export class SalariesDetails {
       private services: ApiDataService
     ) {}
 
-
     ngOnInit(): void {
       this.SalariesListSummary()
+      this.CurrentSatate = 'one-year'
+      console.log('CurrentSatateCurrentSatate' ,this.CurrentSatate)
     }
-
     SalariesListSummary(){
       const token = localStorage.getItem('token');
         const headers = new HttpHeaders({
@@ -32,6 +34,17 @@ export class SalariesDetails {
       this.services.SalaryDetails(headers).subscribe((data : any) => {
         this.SalariesList = data.data;
         console.log('this.SalariesList ' ,this.SalariesList)
+        this.SalariesList.filter((val : any, index :any) => {
+         const current_val =  parseFloat(val.profit_loss_amount + val.profit_loss_amount)
+         this.currentbalance = current_val
+         console.log(current_val)
+        })
+        localStorage.setItem('returnsPrice' ,this.currentbalance)
       })
     }
+    handelChange(event : any){
+      console.log('thisis the event' , event.target.value)
+      this.CurrentSatate = event.target.value
+    }
 }
+ 
