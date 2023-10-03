@@ -12,9 +12,11 @@
   </div>
   <div class="deposite-table">
       <div class="deposite-table-inner">
-        <button (click)="filterDataByYear(2021)">Show Monthly</button>
+        <button (click)="filterDataByYear(2021)">Show Yearly</button>
         <button (click)="filterDataByQuarter('Q1')">Show Quarterly</button>
-        <button (click)="filterDataByMonth('January')">Show  Yearly</button>
+        <button (click)="filterDataByMonth()">Show monthly</button>
+
+
 
 
         <table class="table"[class.active]>
@@ -22,8 +24,8 @@
             <tr>
               <th>Month</th>
               <th>Initial Investment (in Lakhs)</th>
-              <th>Quarterly Profit/Loss (%)</th>
-              <th>Profit/Loss Amount (in Lakhs)</th>
+              <th>Quarterly Profit (%)</th>
+              <th>Profit (in Lakhs)</th>
               <th>Investment After Quarter (in Lakhs)</th>
             </tr>
           </thead>

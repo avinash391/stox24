@@ -370,27 +370,72 @@ export class SalariesDetails implements OnInit {
   filterDataByYear(year: number) {
     const yearData = this.investorData.find((data) => data.Year === year);
     if (yearData) {
-      this.displayedData = yearData.Quarters.flatMap((q) => q.Months);
+      // Calculate the yearly summary
+      const yearlySummary = {
+        Month: 'Yearly',
+        InitialInvestment: yearData.Quarters.reduce((total, quarter) => {
+          return total + quarter.Months.reduce((quarterTotal, month) => {
+            return quarterTotal + month.InitialInvestment;
+          }, 0);
+        }, 0),
+        QuarterlyProfitLossPercentage: 0,
+        ProfitLossAmount: yearData.Quarters.reduce((total, quarter) => {
+          return total + quarter.Months.reduce((quarterTotal, month) => {
+            return quarterTotal + month.ProfitLossAmount;
+          }, 0);
+        }, 0),
+        InvestmentAfterQuarter: 0,
+      };
+
+      // Set the displayed data to the yearly summary
+      this.displayedData = [yearlySummary];
     } else {
       this.displayedData = [];
     }
   }
 
+  // filterDataByQuarter(quarter: string) {
+  //   this.displayedData = this.investorData.flatMap((year) => {
+  //     return year.Quarters.flatMap((q) =>
+  //       q.Months.filter((month) =>
+  //         ['March', 'June', 'September', 'December'].includes(month.Month)
+  //       )
+  //     );
+  //   });
+  // }
   filterDataByQuarter(quarter: string) {
     this.displayedData = this.investorData.flatMap((year) => {
-      const quarterData = year.Quarters.find((q) => q.Quarter === quarter);
-      return quarterData ? quarterData.Months : [];
+      return year.Quarters.flatMap((q) =>
+        q.Months.filter((month) =>
+          ['March', 'June', 'September', 'December'].includes(month.Month) ||
+          (month.Month === 'January' && quarter === 'Q1') ||
+          (month.Month === 'April' && quarter === 'Q2') ||
+          (month.Month === 'July' && quarter === 'Q3') ||
+          (month.Month === 'October' && quarter === 'Q4')
+        )
+      );
     });
   }
 
-  filterDataByMonth(month: string) {
+
+
+
+
+
+  filterDataByMonth() {
     this.displayedData = this.investorData.flatMap((year) =>
-      year.Quarters.flatMap((q) => {
-        const monthData = q.Months.find((m) => m.Month === month);
-        return monthData ? [monthData] : [];
-      })
+      year.Quarters.flatMap((q) => q.Months)
     );
   }
+
+
+
+
+
+
+
+
+
 
 // Function to toggle between monthly and quarterly data
 toggleDataView(isMonthly: boolean, showQuarterlyData: boolean = false) {
