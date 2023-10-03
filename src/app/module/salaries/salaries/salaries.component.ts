@@ -368,31 +368,38 @@ export class SalariesDetails implements OnInit {
   }
 
   filterDataByYear(year: number) {
-    const yearData = this.investorData.find((data) => data.Year === year);
-    if (yearData) {
-      // Calculate the yearly summary
-      const yearlySummary = {
-        Month: 'Yearly',
-        InitialInvestment: yearData.Quarters.reduce((total, quarter) => {
-          return total + quarter.Months.reduce((quarterTotal, month) => {
-            return quarterTotal + month.InitialInvestment;
-          }, 0);
-        }, 0),
-        QuarterlyProfitLossPercentage: 0,
-        ProfitLossAmount: yearData.Quarters.reduce((total, quarter) => {
-          return total + quarter.Months.reduce((quarterTotal, month) => {
-            return quarterTotal + month.ProfitLossAmount;
-          }, 0);
-        }, 0),
-        InvestmentAfterQuarter: 0,
-      };
+  const yearData = this.investorData.find((data) => data.Year === year);
 
-      // Set the displayed data to the yearly summary
-      this.displayedData = [yearlySummary];
-    } else {
-      this.displayedData = [];
-    }
+  if (yearData) {
+    // Calculate the yearly summary
+    const totalMonths = yearData.Quarters.flatMap((quarter) => quarter.Months);
+
+    const yearlySummary = {
+      Month: 'Yearly',
+      InitialInvestment: yearData.Quarters.reduce((total, quarter) => {
+        return total + quarter.Months.reduce((quarterTotal, month) => {
+          return quarterTotal + month.InitialInvestment;
+        }, 0);
+      }, 0),
+      QuarterlyProfitLossPercentage: totalMonths.reduce((total, month) => {
+        return total + (month.ProfitLossAmount / month.InitialInvestment) * 100;
+      }, 0) / totalMonths.length, // Calculate the average quarterly profit percentage
+      ProfitLossAmount: yearData.Quarters.reduce((total, quarter) => {
+        return total + quarter.Months.reduce((quarterTotal, month) => {
+          return quarterTotal + month.ProfitLossAmount;
+        }, 0);
+      }, 0),
+      InvestmentAfterQuarter: 0, // You can calculate this if needed
+    };
+
+    // Set the displayed data to the yearly summary
+    this.displayedData = [yearlySummary];
+  } else {
+    this.displayedData = [];
   }
+}
+
+
 
   // filterDataByQuarter(quarter: string) {
   //   this.displayedData = this.investorData.flatMap((year) => {
@@ -446,6 +453,21 @@ toggleDataView(isMonthly: boolean, showQuarterlyData: boolean = false) {
 }
 
 ;
+handleIntervalChange(event: any) {
+  const selectedValue = event.target.value;
+
+  if (selectedValue === 'Yearlys') {
+    // Handle filtering for the last 3 months (quarters) here
+    this.filterDataByYear(2021);
+  } else if (selectedValue === 'Quarterly') {
+    this.filterDataByQuarter(selectedValue)
+    // Handle filtering for the last 6 months here
+    // You can call a function similar to filterDataByQuarter, but with the appropriate months
+  } else if (selectedValue === 'monthly') {
+    // Handle filtering for the last 1 year here
+    this.filterDataByMonth();
+  }
+}
 
 // Function to update displayed data based on selected options
 updateDisplayedData() {

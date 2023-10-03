@@ -1,20 +1,26 @@
 <section>
   <div  class="row">
-      <div class="col-6">
+      <div class="col-10">
           <div class="current-deposite-block">
               <div class="current-deposite">
                   <strong>Salary</strong>
                   <p>All salaries will be listed here</p>
               </div>
+
           </div>
       </div>
-
+      <div class="slecect-box col-2 ">
+        <select class="form-select" (change)="handleIntervalChange($event)">
+          <option value="Yearlys">Show Yearlys</option>
+          <option value="Quarterly">Show Quarterly</option>
+          <option value="monthly">Show monthly</option>
+        </select>
+      </div>
   </div>
   <div class="deposite-table">
       <div class="deposite-table-inner">
-        <button (click)="filterDataByYear(2021)">Show Yearly</button>
-        <button (click)="filterDataByQuarter('Q1')">Show Quarterly</button>
-        <button (click)="filterDataByMonth()">Show monthly</button>
+
+
 
 
 
