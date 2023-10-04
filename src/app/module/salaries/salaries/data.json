@@ -1,0 +1,333 @@
+{
+  "investorData": [
+    {
+      "Year": 2021,
+      "Quarters": [
+        {
+          "Quarter": "Q1",
+          "Months": [
+            {
+              "Month": "January",
+              "Initial Investment (in Lakhs)": 80,
+              "Quarterly Profit/Loss (%)": -2,
+              "Profit/Loss Amount (in Lakhs)": -1.6,
+              "Investment After Quarter (in Lakhs)": 78.4
+            },
+            {
+              "Month": "February",
+              "Initial Investment (in Lakhs)": 78.4,
+              "Quarterly Profit/Loss (%)": 12,
+              "Profit/Loss Amount (in Lakhs)": 9.408,
+              "Investment After Quarter (in Lakhs)": 87.808
+            },
+            {
+              "Month": "March",
+              "Initial Investment (in Lakhs)": 87.808,
+              "Quarterly Profit/Loss (%)": -5,
+              "Profit/Loss Amount (in Lakhs)": -4.3904,
+              "Investment After Quarter (in Lakhs)": 83.4176
+            }
+          ]
+        },
+        {
+          "Quarter": "Q2",
+          "Months": [
+            {
+              "Month": "April",
+              "Initial Investment (in Lakhs)": 83.4176,
+              "Quarterly Profit/Loss (%)": 14,
+              "Profit/Loss Amount (in Lakhs)": 11.698464,
+              "Investment After Quarter (in Lakhs)": 95.116064
+            },
+            {
+              "Month": "May",
+              "Initial Investment (in Lakhs)": 95.116064,
+              "Quarterly Profit/Loss (%)": -2,
+              "Profit/Loss Amount (in Lakhs)": -1.90232128,
+              "Investment After Quarter (in Lakhs)": 93.21374272
+            },
+            {
+              "Month": "June",
+              "Initial Investment (in Lakhs)": 93.21374272,
+              "Quarterly Profit/Loss (%)": 8,
+              "Profit/Loss Amount (in Lakhs)": 7.457099376,
+              "Investment After Quarter (in Lakhs)": 100.6708421
+            }
+          ]
+        },
+        {
+          "Quarter": "Q3",
+          "Months": [
+            {
+              "Month": "July",
+              "Initial Investment (in Lakhs)": 100.6708421,
+              "Quarterly Profit/Loss (%)": 3,
+              "Profit/Loss Amount (in Lakhs)": 3.020125263,
+              "Investment After Quarter (in Lakhs)": 103.6909674
+            },
+            {
+              "Month": "August",
+              "Initial Investment (in Lakhs)": 103.6909674,
+              "Quarterly Profit/Loss (%)": 7,
+              "Profit/Loss Amount (in Lakhs)": 7.257276518,
+              "Investment After Quarter (in Lakhs)": 110.9482439
+            },
+            {
+              "Month": "September",
+              "Initial Investment (in Lakhs)": 110.9482439,
+              "Quarterly Profit/Loss (%)": 4,
+              "Profit/Loss Amount (in Lakhs)": 4.437929756,
+              "Investment After Quarter (in Lakhs)": 115.3861737
+            }
+          ]
+        },
+        {
+          "Quarter": "Q4",
+          "Months": [
+            {
+              "Month": "October",
+              "Initial Investment (in Lakhs)": 115.3861737,
+              "Quarterly Profit/Loss (%)": 6,
+              "Profit/Loss Amount (in Lakhs)": 6.922170422,
+              "Investment After Quarter (in Lakhs)": 122.3083441
+            },
+            {
+              "Month": "November",
+              "Initial Investment (in Lakhs)": 122.3083441,
+              "Quarterly Profit/Loss (%)": 3,
+              "Profit/Loss Amount (in Lakhs)": 3.669250323,
+              "Investment After Quarter (in Lakhs)": 125.9775944
+            },
+            {
+              "Month": "December",
+              "Initial Investment (in Lakhs)": 125.9775944,
+              "Quarterly Profit/Loss (%)": 5,
+              "Profit/Loss Amount (in Lakhs)": 6.29887972,
+              "Investment After Quarter (in Lakhs)": 132.2764741
+            }
+          ]
+        }
+      ]
+    },
+   {
+  "Year": 2022,
+  "Quarters": [
+    {
+      "Quarter": "Q1",
+      "Months": [
+        {
+          "Month": "January",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "February",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "March",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q2",
+      "Months": [
+        {
+          "Month": "April",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "May",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "June",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q3",
+      "Months": [
+        {
+          "Month": "July",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "August",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "September",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q4",
+      "Months": [
+        {
+          "Month": "October",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "November",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "December",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    }
+  ]
+}
+,
+    {
+  "Year": 2023,
+  "Quarters": [
+    {
+      "Quarter": "Q1",
+      "Months": [
+        {
+          "Month": "January",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "February",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "March",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q2",
+      "Months": [
+        {
+          "Month": "April",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "May",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "June",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q3",
+      "Months": [
+        {
+          "Month": "July",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "August",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "September",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    },
+    {
+      "Quarter": "Q4",
+      "Months": [
+        {
+          "Month": "October",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "November",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        },
+        {
+          "Month": "December",
+          "Initial Investment (in Lakhs)": 0,
+          "Quarterly Profit/Loss (%)": 0,
+          "Profit/Loss Amount (in Lakhs)": 0,
+          "Investment After Quarter (in Lakhs)": 0
+        }
+      ]
+    }
+  ]
+}
+
+  ]
+}

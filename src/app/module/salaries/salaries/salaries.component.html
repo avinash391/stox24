@@ -1,103 +1,53 @@
 <section>
-    <div  class="row">
-        <div class="col-12">
-            <div class="current-deposite-block d-flex justify-content-between W-100">
-                <div class="current-deposite">
-                    <strong>Returns</strong>
-                    <p>All Returns will be listed here</p>
-                </div>
-               
-                  <div class="slecect-box col-2">
-                    <select class="form-select" (change) = "handelChange($event)">
-                      <!-- <option selected value="one-year">View Your Return History </option> -->
-                      <option value="Quater">Last 3 Months</option>
-                      <option value="six-month">Last 6 Months</option>
-                      <option value="one-year" selected>Last 1 Year</option>
-                    </select>
-                  </div>
-            </div>
-        </div>
-        <!-- <app-pie-chart></app-pie-chart> -->
-        <!-- <app-pie-chart></app-pie-chart> -->
-        
-    </div>
-    <div class="deposite-table">
-        <div class="deposite-table-inner">
-            <table class="table"[class.active]="CurrentSatate === 'Quater'" [class.hide]="CurrentSatate !== 'Quater'">
-                <thead>
-                  <tr>
-                    <th scope="col">Quater1</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">INIIAL INVESTED(IN CRORES)</th>
-                    <th scope="col">QUATERLY PROFILT/LOSS(%)</th>
-                    <th scope="col">PROFIT/LOSS AMMOUNT(in crore)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of SalariesList">
-                    <!--  -->
-                    <td>{{item.quarter}}</td>
-                    <td>{{item.year}}</td>
-                    <td>{{item.initial_investment}}</td>
-                    <td>{{item.profit_loss_percentage}}%</td>
-                    <td>{{item.profit_loss_amount}}</td> 
-                    <!-- <td>{{SalariesList[0].status}}</td> -->
+  <div  class="row">
+      <div class="col-10">
+          <div class="current-deposite-block">
+              <div class="current-deposite">
+                  <strong>Salary</strong>
+                  <p>All salaries will be listed here</p>
+              </div>
 
-                  </tr>
-                </tbody>
-              </table>
-
-              <table class="table"[class.active]="CurrentSatate === 'six-month'" [class.hide]="CurrentSatate !== 'six-month'">
-                <thead>
-                  <tr>
-                    <th scope="col">Quater2</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">INIIAL INVESTED(IN CRORES)</th>
-                    <th scope="col">QUATERLY PROFILT/LOSS(%)</th>
-                    <th scope="col">PROFIT/LOSS AMMOUNT(in crore)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of SalariesList">
-                    <!--  -->
-                    <td>{{item.quarter}}</td>
-                    <td>{{item.year}}</td>
-                    <td>{{item.initial_investment}}</td>
-                    <td>{{item.profit_loss_percentage}}%</td>
-                    <td>{{item.profit_loss_amount}}</td> 
-                    <!-- <td>{{SalariesList[0].status}}</td> -->
-
-                  </tr>
-                </tbody>
-              </table>
-
-              <table class="table"[class.active]="CurrentSatate === 'one-year'" [class.hide]="CurrentSatate !== 'one-year'">
-                <thead>
-                  <tr>
-                    <th scope="col">Quater3</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">INIIAL INVESTED(IN CRORES)</th>
-                    <th scope="col">QUATERLY PROFILT/LOSS(%)</th>
-                    <th scope="col">PROFIT/LOSS AMMOUNT(in crore)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of SalariesList">
-                    <!--  -->
-                    <td>{{item.quarter}}</td>
-                    <td>{{item.year}}</td>
-                    <td>{{item.initial_investment}}</td>
-                    <td>{{item.profit_loss_percentage}}%</td>
-                    <td>{{item.profit_loss_amount}}</td> 
-                    <!-- <td>{{SalariesList[0].status}}</td> -->
-
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-        
-    </div>
-    <div class="chart-container">
-      <canvas  id="MyChart" >{{ chart }}</canvas>
+          </div>
+      </div>
+      <div class="slecect-box col-2 ">
+        <select class="form-select" (change)="handleIntervalChange($event)">
+          <option value="Yearlys">Show Yearly</option>
+          <option value="Quarterly">Show Quarterly</option>
+          <option value="monthly">Show monthly</option>
+        </select>
+      </div>
   </div>
+  <div class="deposite-table">
+      <div class="deposite-table-inner">
+
+
+
+
+
+
+        <table class="table"[class.active]>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Initial Investment (in Lakhs)</th>
+              <th>Quarterly Profit (%)</th>
+              <th>Profit (in Lakhs)</th>
+              <th>Investment After Quarter (in Lakhs)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of displayedData">
+              <td>{{ data.Month }}</td>
+              <td>{{ data.InitialInvestment }}</td>
+              <td>{{ data.QuarterlyProfitLossPercentage }}</td>
+              <td>{{ data.ProfitLossAmount }}</td>
+              <td>{{ data.InvestmentAfterQuarter }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+  </div>
+
 </section>
