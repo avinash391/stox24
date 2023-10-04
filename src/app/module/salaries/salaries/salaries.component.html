@@ -7,16 +7,18 @@
                     <p>All Returns will be listed here</p>
                 </div>
                
-                <div class="slecect-box col-2">
-                  <select class="form-select" (change) = "handelChange($event)">
-                    <!-- <option selected value="one-year">View Your Return History </option> -->
-                    <option value="Quater">Last 3 Months</option>
-                    <option value="six-month">Last 6 Months</option>
-                    <option value="one-year" selected>Last 1 Year</option>
-                  </select>
-                </div>
+                  <div class="slecect-box col-2">
+                    <select class="form-select" (change) = "handelChange($event)">
+                      <!-- <option selected value="one-year">View Your Return History </option> -->
+                      <option value="Quater">Last 3 Months</option>
+                      <option value="six-month">Last 6 Months</option>
+                      <option value="one-year" selected>Last 1 Year</option>
+                    </select>
+                  </div>
             </div>
         </div>
+        <!-- <app-pie-chart></app-pie-chart> -->
+        <!-- <app-pie-chart></app-pie-chart> -->
         
     </div>
     <div class="deposite-table">
@@ -93,6 +95,9 @@
                 </tbody>
               </table>
         </div>
+        
     </div>
-    
+    <div class="chart-container">
+      <canvas  id="MyChart" >{{ chart }}</canvas>
+  </div>
 </section>

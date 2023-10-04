@@ -1,85 +1,101 @@
 
 
 <div class="sidebar side-bar-menu" [ngClass]="{'show': isSidebarVisible}">
-   <div class="logo-details">
-     <div class="logo"></div>
-   </div>
-   <!-- <ul class="nav-links navbar-main-ul" id="nav-links">
-     <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
-       <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
-         <a [routerLink]="[item.link]">
-           <i [class]="item.icon"></i>
-           <span class="link_name">{{item.link_name}}</span>
-         </a>
-       </div>
-       <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
-         <a>
-           <i [class]="item.icon"></i>
-           <span class="link_name">{{item.link_name}}</span>
-         </a>
-         <i class='fa fa-angle-down navbar-arrow-color'></i>
-       </div>
-       <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
-         <li><a class="link_name">{{item.link_name}}</a></li>
-         <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
-           <a [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
-         </li>
-       </ul>
-     </li>
-   </ul> -->
+  <div class="logo-details">
+    <div class="logo"></div>
+  </div>
+  <!-- <ul class="nav-links navbar-main-ul" id="nav-links">
+    <li *ngFor="let item of menuSidebar" #itemEl routerLinkActive="active">
+      <div *ngIf="item.sub_menu.length == 0" class="dropdown-title">
+        <a [routerLink]="[item.link]">
+          <i [class]="item.icon"></i>
+          <span class="link_name">{{item.link_name}}</span>
+        </a>
+      </div>
+      <div *ngIf="item.sub_menu.length > 0" class="dropdown-title" (click)="showSubmenu(itemEl)">
+        <a>
+          <i [class]="item.icon"></i>
+          <span class="link_name">{{item.link_name}}</span>
+        </a>
+        <i class='fa fa-angle-down navbar-arrow-color'></i>
+      </div>
+      <ul class="sub-menu" [class.blank]="item.sub_menu.length == 0">
+        <li><a class="link_name">{{item.link_name}}</a></li>
+        <li *ngFor="let item_sub of item.sub_menu" routerLinkActive="active">
+          <a [routerLink]="[item_sub.link]">{{item_sub.link_name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul> -->
 
-   <div   class="sidebar close"  >
-     <div class="logo-details"><a><img class="nav-logo-set" src="../../../../assets/images/Stox24.png"></a></div>
-     <ul   class="nav-links sidebar-nav-links">
-        <li [routerLinkActive]="['active']" class="side-bar-direction">
-           <div class="icon-link"><a routerLink="dashboard"><i class="bx bxs-dashboard"></i><span class="link-name">Dashboard</span></a></div>
-           <!-- <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul> -->
-        </li>
-        <!-- <li class="side-bar-direction" [routerLinkActive]="['active']">
-           <div class="icon-link">
-              <a><i class="bx bxs-user-account"></i><span class="link-name">Account</span></a>
-           </div>
-           <ul class="sub-menu">
-              <a><span class="link-name">Account</span></a>
-           </ul>
-        </li> -->
-        <li class="side-bar-direction" [routerLinkActive]="['active']">
-          <div class="icon-link">
-             <a routerLink="salaries"> <i class="bx bxs-user-account"></i><span class="link-name">Returns</span></a>
-          </div>
-          <!-- <ul class="sub-menu">
-             <a><span class="link-name">Account</span></a>
-          </ul> -->
+  <div   class="sidebar close"  >
+    <div class="logo-details"><a><img class="nav-logo-set" src="../../../../assets/images/Stox24.png"></a></div>
+    <ul   class="nav-links sidebar-nav-links">
+       <li [routerLinkActive]="['active']" class="side-bar-direction">
+          <div class="icon-link"><a routerLink="dashboard"><i class="bx bxs-dashboard"></i><span class="link-name">Dashboard</span></a></div>
+          <!-- <ul class="sub-menu"><a routerLink="dashboard"><span class="link-name">Dashboard</span></a></ul> -->
        </li>
-        <li class="side-bar-direction" [routerLinkActive]="['active']">
-           <div class="icon-link">
-              <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>
-                <span class="link-name">Deposit</span> </a>
-              <i class="bx bxs-chevron-down arrow"></i>
-           </div>
-        </li>
-        <li class="side-bar-direction" [routerLinkActive]="['active']">
+       <!-- <li class="side-bar-direction" [routerLinkActive]="['active']">
           <div class="icon-link">
-             <a routerLink="order-history"> <i class="fa fa-history" aria-hidden="true"></i>
-               <span class="link-name">Transaction History</span> </a>
+             <a><i class="bx bxs-user-account"></i><span class="link-name">Account</span></a>
+          </div>
+          <ul class="sub-menu">
+             <a><span class="link-name">Account</span></a>
+          </ul>
+       </li> -->
+       <li class="side-bar-direction" [routerLinkActive]="['active']">
+         <div class="icon-link">
+            <a routerLink="salaries"> <i class="bx bxs-user-account"></i><span class="link-name">Returns</span></a>
+         </div>
+         <!-- <ul class="sub-menu">
+            <a><span class="link-name">Account</span></a>
+         </ul> -->
+      </li>
+       <li class="side-bar-direction" [routerLinkActive]="['active']">
+          <div class="icon-link">
+             <a routerLink="depositeDetails"> <i class="bx bx-dollar"></i>
+               <span class="link-name">Deposit</span> </a>
              <i class="bx bxs-chevron-down arrow"></i>
           </div>
        </li>
+       <li class="side-bar-direction" [routerLinkActive]="['active']">
+         <div class="icon-link">
+            <a routerLink="order-history"> <i class="fa fa-history" aria-hidden="true"></i>
+              <span class="link-name">Transaction History</span> </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+         </div>
+      </li>
+      <li [routerLinkActive]="['active']" class="side-bar-direction">
+          <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>
+          <!-- <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul> -->
+       </li>
        <li [routerLinkActive]="['active']" class="side-bar-direction">
-           <div class="icon-link"><a routerLink="user-profile"><i class="bx bx-user"></i><span class="link-name">Profile</span></a></div>
-           <!-- <ul class="sub-menu"><a routerLink="user-profile"><span class="link-name">Profile</span></a></ul> -->
-        </li>
-        <li [routerLinkActive]="['active']" class="side-bar-direction">
-          <div class="icon-link">
-            <a routerLink="user-live"> <!-- Update the routerLink to 'user-live' -->
-              <i class="fa fa-line-chart" aria-hidden="true"></i>
-              <span class="link-name">Live Stock Dashboard</span>
-            </a>
-          </div>
-        </li>
-
-     </ul>
-  </div>
+         <div class="icon-link">
+           <a routerLink="user-live"> <!-- Update the routerLink to 'user-live' -->
+             <i class="fa fa-line-chart" aria-hidden="true"></i>
+             <span class="link-name">Live Stock Dashboard</span>
+           </a>
+         </div>
+       </li>
+       <!-- <li [routerLinkActive]="['active']" class="side-bar-direction">
+         <div class="icon-link">
+           <a [routerLink]="[kycUrl]"> 
+             <i class="fa fa-line-chart" aria-hidden="true"></i>
+             <span class="link-name">kyc Status</span>
+           </a>
+         </div>
+       </li> -->
+       <li [routerLinkActive]="['active']" class="side-bar-direction">
+        <div class="icon-link">
+          <a [routerLink]="kycUrl"> <!-- Remove the square brackets around kycUrl -->
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+            <span class="link-name">kyc Status</span>
+          </a>
+        </div>
+      </li>
+        
+    </ul>
+ </div>
 
 
 

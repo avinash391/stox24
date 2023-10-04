@@ -28,10 +28,6 @@ import { NgOtpInputModule } from  'ng-otp-input';
     HeaderComponent,
     HeaderLoginComponent,
     NumberValidateDirective,
-    
-   
-  
-  
   ],
   imports: [
     BrowserAnimationsModule,

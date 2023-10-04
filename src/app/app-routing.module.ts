@@ -16,6 +16,7 @@ import { AuthGuard } from './authentication/auth.guard';
 //   { path:'userprofile', loadChildren:()=>import('./module/userprofile/userprofile.module').then(m=>m.UserprofileModule),canActivate:[AuthGuard]},
 
 // ];
+const url = localStorage.getItem('url')
 const routes: Routes = [
   // {
   //   path: '',
@@ -128,6 +129,8 @@ const routes: Routes = [
         (m) => m.orderDetailsModule
       ),
   },
+
+   
    {
     path: '**', redirectTo: '/dashboard'
   }

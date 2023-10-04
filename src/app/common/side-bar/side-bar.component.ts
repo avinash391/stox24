@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
 import { SharedDataService } from 'src/app/services/sharedData/shared-data.service';
 @Component({
   selector: 'app-side-bar',
@@ -8,8 +9,12 @@ import { SharedDataService } from 'src/app/services/sharedData/shared-data.servi
 })
 export class SideBarComponent implements OnInit {
   isSidebarVisible = true;
+  url : any
+  kycUrl : string  =''
+  ProfileId : any; 
+  // constructor(private router: Router) {}
 
-
+  
 
 
 
@@ -99,15 +104,23 @@ export class SideBarComponent implements OnInit {
   show1:boolean=false;
   show2:boolean=false;
   show3:boolean=false;
-  constructor(private router:Router, private sharedService: SharedDataService) { }
+    
+    constructor(private router:Router, private sharedService: SharedDataService , private services: ApiDataService) { }
 
   ngOnInit(): void {
+    this.ProfileId =  localStorage.getItem('ProfileID')
     this.sharedService.sidebarVisibilityChange.subscribe((isVisible: any) => {
       this.isSidebarVisible = isVisible;
       console.log("sidebar",this.isSidebarVisible)
     });
-     
+    // const page = localStorage.getItem('url')
+    // console.log(page)
+    // this.url = page 
+
+    this.getUserStage();
+   
     }
+    
 
     toogle(val:any)
     {
@@ -134,6 +147,50 @@ export class SideBarComponent implements OnInit {
 
     showSubmenu(itemEl: HTMLElement) {
       itemEl.classList.toggle("showMenu");
+    }
+
+    getUserStage() {
+      console.log('TESTING LOGIN');
+      let params = {
+        ProfileId:this.ProfileId,
+        Key: '',
+      };
+      this.services.GET_USER_STAGE(params).subscribe((data: any) => {
+        console.log('kjhdfkjshtest', data);
+        if (data.Result == 0) {
+          this.router.navigate(['/onboading-kyc']);
+          this.kycUrl = '/onboading-kyc'
+        } else if (data.Result == 1) {
+          // this.router.navigate(['/onboading-kyc/adhar-verify']);
+          this.kycUrl = '/onboading-kyc/adhar-verify'
+          
+        } else if (data.Result == 2) {
+          // this.router.navigate(['/onboading-kyc/personal-detail']);
+          this.kycUrl = '/onboading-kyc/personal-detail'
+
+          
+        } else if (data.Result == 8) {
+          // this.router.navigate(['/onboading-kyc/bank-detail']);
+          this.kycUrl = '/onboading-kyc/bank-detail'
+
+          
+        } else if (data.Result == 4) {
+          // this.router.navigate(['/onboading-kyc/video-verify']);
+          this.kycUrl = '/onboading-kyc/video-verify'
+
+          
+        } else if (data.Result == 5) {
+          // this.router.navigate(['/onboading-kyc/esign']);
+          this.kycUrl = '/onboading-kyc/esign'
+
+          
+        } else if (data.Result == 6) {
+          // this.router.navigate(['/dashboard']);
+          this.kycUrl = '/dashboard'
+
+        }
+        // this.router.navigate([this.kycUrl]);
+      });
     }
   }
 

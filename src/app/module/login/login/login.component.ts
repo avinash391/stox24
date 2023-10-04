@@ -192,25 +192,32 @@ export class LoginComponent {
     this.services.GET_USER_STAGE(params).subscribe((data: any) => {
       console.log('kjhdfkjshtest', data);
       if (data.Result == 0) {
-        this.router.navigate(['/onboading-kyc']);
+        this.router.navigate(['/onboading-kyc'])
+
         this.shareService.loader(false);
       } else if (data.Result == 1) {
         this.router.navigate(['/onboading-kyc/adhar-verify']);
+
         this.shareService.loader(false);
       } else if (data.Result == 2) {
         this.router.navigate(['/onboading-kyc/personal-detail']);
+
         this.shareService.loader(false);
       } else if (data.Result == 8) {
         this.router.navigate(['/onboading-kyc/bank-detail']);
+
         this.shareService.loader(false);
       } else if (data.Result == 4) {
         this.router.navigate(['/onboading-kyc/video-verify']);
+
         this.shareService.loader(false);
       } else if (data.Result == 5) {
         this.router.navigate(['/onboading-kyc/esign']);
+
         this.shareService.loader(false);
       } else if (data.Result == 6) {
         this.router.navigate(['/dashboard']);
+
         this.shareService.loader(false);
         // this.sessionService.setSession('active', 2);
       }
