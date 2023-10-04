@@ -1,53 +1,55 @@
 <section>
-  <div  class="row">
-      <div class="col-10">
-          <div class="current-deposite-block">
-              <div class="current-deposite">
-                  <strong>Salary</strong>
-                  <p>All salaries will be listed here</p>
-              </div>
+  <div class="row">
+    <div class="col-10">
+      <div class="current-deposite-block">
+        <div class="current-deposite">
+          <strong>Salary</strong>
+          <p>All salaries will be listed here</p>
+        </div>
 
-          </div>
       </div>
-      <div class="slecect-box col-2 ">
-        <select class="form-select" (change)="handleIntervalChange($event)">
-          <option value="Yearlys">Show Yearly</option>
-          <option value="Quarterly">Show Quarterly</option>
-          <option value="monthly">Show monthly</option>
-        </select>
-      </div>
+    </div>
+    <div class="slecect-box col-2 ">
+      <select class="form-select" (change)="handleIntervalChange($event)">
+        <option value="Yearlys">Show Yearly</option>
+        <option value="Quarterly">Show Quarterly</option>
+        <option value="monthly">Show monthly</option>
+      </select>
+    </div>
   </div>
   <div class="deposite-table">
-      <div class="deposite-table-inner">
+    <div class="deposite-table-inner">
+
+      <table class="table" [class.active]>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Initial Investment (in Lakhs)</th>
+            <th>Quarterly Profit (%)</th>
+            <th>Profit (in Lakhs)</th>
+            <th>Investment After Quarter (in Lakhs)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of displayedData">
+            <td>{{ data.Month }}</td>
+            <td>{{ data.InitialInvestment }}</td>
+            <td>{{ data.QuarterlyProfitLossPercentage }}</td>
+            <td>{{ data.ProfitLossAmount }}</td>
+            <td>{{ data.InvestmentAfterQuarter }}</td>
+          </tr>
+        </tbody>
+      </table>
 
 
-
-
-
-
-        <table class="table"[class.active]>
-          <thead>
-            <tr>
-              <th>Month</th>
-              <th>Initial Investment (in Lakhs)</th>
-              <th>Quarterly Profit (%)</th>
-              <th>Profit (in Lakhs)</th>
-              <th>Investment After Quarter (in Lakhs)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of displayedData">
-              <td>{{ data.Month }}</td>
-              <td>{{ data.InitialInvestment }}</td>
-              <td>{{ data.QuarterlyProfitLossPercentage }}</td>
-              <td>{{ data.ProfitLossAmount }}</td>
-              <td>{{ data.InvestmentAfterQuarter }}</td>
-            </tr>
-          </tbody>
-        </table>
-
-
+    </div>
+  </div>
+  <div class="row chart-table">
+    <div class="col-12">
+      <div class="chart-container">
+        <canvas id="MyChart">{{ chart }}</canvas>
       </div>
+    </div>
   </div>
 
 </section>

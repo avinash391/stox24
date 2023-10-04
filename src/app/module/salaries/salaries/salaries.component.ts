@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+// import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 interface MonthData {
   Month: string;
   InitialInvestment: number;
@@ -24,6 +25,7 @@ interface YearData {
   styleUrls: ['./salaries.component.scss'],
 })
 export class SalariesDetails implements OnInit {
+  chart: any;
   investorData: YearData[] =[
     {
       "Year": 2021,
@@ -365,15 +367,17 @@ export class SalariesDetails implements OnInit {
 
   ngOnInit() {
     // You can load additional data or perform initialization here if needed
+    this.createChart();
+    this.filterDataByYear(2021)
   }
 
   filterDataByYear(year: number) {
   const yearData = this.investorData.find((data) => data.Year === year);
+  console.log("deep",yearData)
 
   if (yearData) {
     // Calculate the yearly summary
     const totalMonths = yearData.Quarters.flatMap((quarter) => quarter.Months);
-
     const yearlySummary = {
       Month: 'Yearly',
       InitialInvestment: yearData.Quarters.reduce((total, quarter) => {
@@ -424,26 +428,11 @@ export class SalariesDetails implements OnInit {
     });
   }
 
-
-
-
-
-
   filterDataByMonth() {
     this.displayedData = this.investorData.flatMap((year) =>
       year.Quarters.flatMap((q) => q.Months)
     );
   }
-
-
-
-
-
-
-
-
-
-
 // Function to toggle between monthly and quarterly data
 toggleDataView(isMonthly: boolean, showQuarterlyData: boolean = false) {
   this.showMonthlyData = isMonthly;
@@ -495,5 +484,31 @@ updateDisplayedData() {
   }
 }
 
+createChart(){
+  
+  this.chart = new Chart("MyChart", {
+    type: 'doughnut', //this denotes tha type of chart
+
+    data: {// values on X-Axis
+      labels: ['2021' , '2022' , '2023'], 
+       datasets: [
+        {
+          label: "Sales",
+          data: ['5.9166745214421885' ,"1" , "10"],
+          backgroundColor: [
+            'green',
+            'yellow',
+            'red'
+          ],
+        },
+         
+      ]
+    },
+    options: {
+      aspectRatio:2.5
+    }
+    
+  });
+}
 
 }
