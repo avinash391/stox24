@@ -131,6 +131,7 @@ submitFormData(formData: FormData, token: string): Observable<any> {
 
 
 
+
 portfolio(){
   const token = localStorage.getItem('token');
 
@@ -146,7 +147,7 @@ portfolio(){
 
 
 
-
+// frontend
 getInvestment(){
 
   return this.http.get('https://stox24.com/admin/api/investment-summary')
@@ -180,6 +181,16 @@ SalaryDetails(headers : HttpHeaders){
 OrderHistory(headers : HttpHeaders){
   const options = { headers };
   return this.http.get('https://stox24admin.techbuyhelp.com/api/list-orders-history' ,options)
+}
+
+
+getEarlyData(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24admin.techbuyhelp.com/api/returns?type=yearly' ,options)
+}
+getQuateryData(headers : HttpHeaders){
+  const options = { headers };
+  return this.http.get('https://stox24admin.techbuyhelp.com/api/returns?type=quarterly' ,options)
 }
 
 

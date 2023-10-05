@@ -1,12 +1,16 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 // import Chart from 'chart.js';
 import Chart from 'chart.js/auto';
+import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
 interface MonthData {
   Month: string;
   InitialInvestment: number;
   QuarterlyProfitLossPercentage: number;
   ProfitLossAmount: number;
   InvestmentAfterQuarter: number;
+
+  
 }
 
 interface QuarterData {
@@ -26,6 +30,13 @@ interface YearData {
 })
 export class SalariesDetails implements OnInit {
   chart: any;
+  LineChart : any;
+  value : any;
+  TotalProfit: any = Number;
+  totalInvested : any = Number;
+  totalprofitPercentage : any = '';
+  MothlyData : any[] = [];
+  Yearlylist : any
   investorData: YearData[] =[
     {
       "Year": 2021,
@@ -362,13 +373,18 @@ export class SalariesDetails implements OnInit {
   selectedMonth!: null;
   selectedQuarter!: null;
   selectedYear: any;
+  YearlyDataDataList: any[] = []
 
-  constructor() {}
+  constructor( private services: ApiDataService) {}
+
 
   ngOnInit() {
     // You can load additional data or perform initialization here if needed
-    this.createChart();
+    this.YearlyData()
     this.filterDataByYear(2021)
+    // this.createChart();
+    this.QuaterlyData()
+    // this.createLineChart()
   }
 
   filterDataByYear(year: number) {
@@ -402,18 +418,6 @@ export class SalariesDetails implements OnInit {
     this.displayedData = [];
   }
 }
-
-
-
-  // filterDataByQuarter(quarter: string) {
-  //   this.displayedData = this.investorData.flatMap((year) => {
-  //     return year.Quarters.flatMap((q) =>
-  //       q.Months.filter((month) =>
-  //         ['March', 'June', 'September', 'December'].includes(month.Month)
-  //       )
-  //     );
-  //   });
-  // }
   filterDataByQuarter(quarter: string) {
     this.displayedData = this.investorData.flatMap((year) => {
       return year.Quarters.flatMap((q) =>
@@ -446,12 +450,9 @@ handleIntervalChange(event: any) {
   const selectedValue = event.target.value;
 
   if (selectedValue === 'Yearlys') {
-    // Handle filtering for the last 3 months (quarters) here
     this.filterDataByYear(2021);
   } else if (selectedValue === 'Quarterly') {
     this.filterDataByQuarter(selectedValue)
-    // Handle filtering for the last 6 months here
-    // You can call a function similar to filterDataByQuarter, but with the appropriate months
   } else if (selectedValue === 'monthly') {
     // Handle filtering for the last 1 year here
     this.filterDataByMonth();
@@ -484,17 +485,99 @@ updateDisplayedData() {
   }
 }
 
-createChart(){
-  
-  this.chart = new Chart("MyChart", {
-    type: 'doughnut', //this denotes tha type of chart
 
+// profitPercentage : any = [];  
+YearlyData(){
+ const token ='8|0RuDclFDEknVg1ATwltf2kYeP9YKIZ6rIOdc5fFm2184c3d0'
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  });
+  this.services.getEarlyData(headers).subscribe((data : any) => {
+    this.YearlyDataDataList = data.data;
+    const yearLabels = [];
+    const profitPercentages = [];
+    for(let i = 0; i < this.YearlyDataDataList.length; i++){
+
+      this.value =  this.YearlyDataDataList[i].year;
+      this.TotalProfit = Number(this.YearlyDataDataList[i].total_profit)
+      this.totalInvested = Number(this.YearlyDataDataList[i].total_investment)
+      const profitPercentage = (this.TotalProfit / this.totalInvested) * 100;
+      console.log('this.OrderhistoryList ' ,this.YearlyDataDataList)
+      yearLabels.push(this.value);
+      profitPercentages.push(profitPercentage);
+      // newval = yearLabels.map((value) => {
+      //   return value
+      // })
+    }
+    // console.log(yearLabels, newval)
+    this.createChart(yearLabels, profitPercentages);
+  })
+};
+
+
+
+
+createChart(yearLabels : any, profitPercentages : any) {
+  const newLocal = this;
+  newLocal.chart = new Chart('MyChart', {
+    type: 'doughnut',
+    data: {
+      labels: yearLabels.map((val : any, index : any) =>   {
+        return val;
+        }),
+      datasets: [{
+        data: profitPercentages.map((val : any, index : any) =>   {
+        return val;
+        }),
+        backgroundColor: ['green', 'lightgray' , 'red'],
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      // Other chart options here
+    }
+  });
+}
+
+
+
+// quraterly
+QuaterlyData(){
+  const token ='8|0RuDclFDEknVg1ATwltf2kYeP9YKIZ6rIOdc5fFm2184c3d0'
+  const headers = new HttpHeaders({
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  });
+  this.services.getQuateryData(headers).subscribe((data : any) => {
+    this.MothlyData = data.data;
+    const monthlyDatavalue = [];
+    const profitPercentages = [];
+    this.MothlyData.map((valueData : any) => {
+      console.log(valueData.year)
+      this.Yearlylist = valueData.year;
+      monthlyDatavalue.push(this.Yearlylist)
+    })
+    console.log("value",monthlyDatavalue)
+    // this.createLineChart(monthlyDatavalue)
+  })
+}
+
+
+createLineChart(monthlyDatas : any){
+  console.log(monthlyDatas)
+  // console.log(monthlyData)
+  // const labels = Utils.months({count: 7});
+  // this.chartData = [this.totalprofitPercentage]; 
+  this.LineChart = new Chart("lineChart", {
+    type: 'bar', 
     data: {// values on X-Axis
-      labels: ['2021' , '2022' , '2023'], 
+      labels: ['2022'], 
        datasets: [
         {
           label: "Sales",
-          data: ['5.9166745214421885' ,"1" , "10"],
+        data:['100'],
           backgroundColor: [
             'green',
             'yellow',

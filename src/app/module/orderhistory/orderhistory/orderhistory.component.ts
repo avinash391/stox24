@@ -10,11 +10,7 @@ import { ApiDataService } from 'src/app/services/dataservice/api-data.service';
 })
 export class OrderHistory {
   Orderhistorylist : any = undefined;
-
-  
   constructor(private formBuilder: FormBuilder, private router: Router,    private services: ApiDataService) {}
-
-
   ngOnInit(): void {
     this.orderHistoryDetials()
   }
